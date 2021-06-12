@@ -29,4 +29,9 @@
 echo "Maior número do array: $maior\n";
 echo "Menor número do array: $menor\n";
 
+
+// métodos pra encontrar menor e maior valor de arrays, igualzinho ao python!
+echo min($array);
+echo max($array);
+
 // Nas páginas web, vamos encontrar foreach onde possuir a função listar.
