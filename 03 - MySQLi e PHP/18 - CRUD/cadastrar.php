@@ -12,10 +12,15 @@ endif;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD - Cadastrar</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>CRUD - Cadastrando Clientes</h1>
 
+    <div>
+    <h1>CRUD - Cadastrando Clientes</h1>
+    </div>
+
+    <div>
     <form action="cadastrodb.php" method="post">
         <fieldset>
             <legend>Insira o Cliente</legend>
@@ -36,8 +41,10 @@ endif;
             <input type="submit" value="Cadastrar">
         </fieldset>
     </form>
-
+    </div>
     <a href="listar.php">Listar Clientes</a><br>
+    <br><hr>
+    <footer>Estudos de PHP - Maycon R. Campos</footer>
     
 </body>
 </html>

@@ -16,4 +16,7 @@ if($nome and $cpf and $nasc and $email){
     }else{
         $_SESSION['msg'] = "Erro ao inserir cliente";
     }
+}else{
+    header("Location: cadastrar.php");
+    $_SESSION['msg'] = "ERRO! Preencher todos os campos.";
 }
