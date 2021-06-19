@@ -42,8 +42,10 @@ endif;
         </fieldset>
     </form>
     </div>
-    <a href="listar.php">Listar Clientes</a><br>
-    <br><hr>
+    <a href="listar.php">Listar</a>
+    <a href="pesquisar.php"> - Pesquisar</a>
+
+    <br><br><hr>
     <footer>Estudos de PHP - Maycon R. Campos</footer>
     
 </body>

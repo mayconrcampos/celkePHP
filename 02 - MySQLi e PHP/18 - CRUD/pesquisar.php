@@ -1,3 +1,11 @@
+<?php
+session_start();
+if($_SESSION['msg']){
+    echo $_SESSION['msg'];
+    $_SESSION['msg'] = "";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,25 +48,25 @@
 
     switch($filtro){
         case "nome":
-            echo "<form action='filtrar.php' method='post'>";
+            echo "<form action='filtraNome.php' method='post'>";
             echo "<input type='text' name='nome'>";
             echo "<input type='submit' value='Pesquisar'>";
             echo "</form>";
             break;
         case "cpf":
-            echo "<form action='filtrar.php' method='post'>";
+            echo "<form action='filtraCPF.php' method='post'>";
             echo "<input type='text' name='cpf'>";
             echo "<input type='submit' value='Pesquisar'>";
             echo "</form>";
             break;
         case "nasc":
-            echo "<form action='filtrar.php' method='post'>";
+            echo "<form action='filtraNasc.php' method='post'>";
             echo "<input type='date' name='nasc'>";
             echo "<input type='submit' value='Pesquisar'>";
             echo "</form>";
             break;
         case "email":
-            echo "<form action='filtrar.php' method='post'>";
+            echo "<form action='filtraEmail.php' method='post'>";
             echo "<input type='text' name='email'>";
             echo "<input type='submit' value='Pesquisar'>";
             echo "</form>";
@@ -68,6 +76,9 @@
     }
     
     ?>
+    <br><br><hr>
+    <a href="cadastrar.php">Cadastrar</a>
+    <a href="listar.php"> - Listar</a>
     
 </body>
 </html>

@@ -1,9 +1,10 @@
 <?php
 session_start();
-if($_SESSION['msg']):
-    echo $_SESSION['msg'];
-    $_SESSION['msg'] = "";
-endif;
+include_once("db.php");
+
+$nasc = $_POST['nasc'];
+$email = $_POST['email'];
+
 ?>
 
 <!DOCTYPE html>
@@ -12,12 +13,12 @@ endif;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD -  Listar</title>
+    <title>CRUD -  Filtrar por Nascimento</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
-    <h1>CRUD - Listar Clientes</h1>
+    <h1>CRUD - Filtrar Clientes por Data de Nascimento</h1>
     </div>
 
     <div>
@@ -32,9 +33,10 @@ endif;
             <td>Deletar</td>
         </tr>
     <?php
-    include_once("db.php");
+
     // Pesquisando na Tabela
-    $listarClientes = mysqli_query($conn, "SELECT * FROM clientes");
+    $listarClientes = mysqli_query($conn, "SELECT * FROM clientes WHERE nasc='$nasc'");
+
     $conta = 0;
     while($linhaClientes = mysqli_fetch_assoc($listarClientes)){
         $conta++;
@@ -54,9 +56,10 @@ endif;
     <div>
     <h3><?php
         if($conta > 0){
-            echo "Número de Registros: ".$conta;
+            echo "Registros encontrados: ".$conta;
         }else{
-            echo "Nenhum registro.";
+            $_SESSION['msg'] = "Nenhum registro encontrado.";
+            header("Location: pesquisar.php");
         }
     ?></h3></div>
 

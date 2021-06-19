@@ -52,7 +52,8 @@ $linhaCliente = mysqli_fetch_assoc($selectUsuario);
     </form>
     
     <br>
-    <a href="listar.php">Listar Clientes</a>
+    <a href="listar.php">Listar</a>
+    <a href="pesquisar.php"> - Pesquisar</a>
     
 </body>
 </html>
