@@ -9,6 +9,18 @@
 </head>
 <body>
     <h1>Alo Mundo! Com Bootstrap4!</h1>
+    <hr>
+
+    <fieldset>
+        <legend>Nome completo</legend>
+    <form action="" method="post">
+        <label>
+            Nome <input type="text" name="nome">
+        </label>
+        <input type="submit" value="Enviar">
+    </form>
+    
+    </fieldset>
 
 
     
