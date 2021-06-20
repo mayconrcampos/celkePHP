@@ -19,8 +19,9 @@ include_once("db.php");
     </div>
 
     <div class="alert alert-primary" role="alert">
-        <table class="table table-light table-bordered table-hover table-responsive">
-            <thead>
+
+        <table class="table table-striped table-hover table-responsive table-bordered">
+            <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Descrição</th>
@@ -34,15 +35,32 @@ include_once("db.php");
             <tbody>
                 
                 <?php
-                    $queryContas = mysqli_query($conn, "SELECT * FROM controle");
+                    $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle");
+                    $contaReceita = 0;
+                    $contaDespesa = 0;
                     $conta = 0;
                     while($conta = mysqli_fetch_assoc($queryContas)){?>
                     <tr>
-                        <?php $conta++; ?>
+                        <?php $conta++; 
+                            $tipo = ($conta['tipo']) ? true : false; 
+                            if($tipo): $contaReceita += $conta['valor'];
+                            else: $contaDespesa += $conta['valor'];
+                            endif;
+                        ?>
+                        
                         <th><?php echo $conta['id'];?></th>
                         <td><?php echo $conta['descricao'];?></td>
-                        <td><?php echo number_format($conta['valor'], 2, ",", ".");?></td>
-                        <td><?php echo $conta['data'];?></td>
+
+                        <?php 
+                        $tipo = ($conta['tipo']) ? true : false; 
+                        if($tipo):
+                            echo "<td class='table-primary'>".number_format($conta['valor'], 2, ",", ".")."</td>";                    
+                        else:
+                            echo "<td class='table-danger'>".number_format($conta['valor'], 2, ",", ".")."</td>";
+                        endif;
+                        ?>
+
+                        <td><?php echo $conta['data']; ?></td>
                         <td><?php echo $conta['categoria'];?></td>
                         <td><?php echo $conta['comentario'];?></td>
                         <td><?php $tipo = ($conta['tipo'] == 1) ? "Receita" : "Despesa"; echo $tipo;?></td>                  
@@ -52,12 +70,16 @@ include_once("db.php");
             <?php   } ?>
                     <tr>
                         <td></td>
-                        <td><?php echo "TOTAL RECEITAS: " ?></td>
+                        <td class="table-primary"><?php echo "Total Receitas (R$)";?></td>
+                        <td class="table-primary"><?php echo number_format($contaReceita, 2, ",", ".");?></td>
+                        <td class="table-danger"><?php echo "Total Despesas (R$)"?></td>
+                        <td class="table-danger"><?php echo number_format($contaDespesa, 2, ",", ".");?></td>
                     </tr>
                     
                 
             </tbody>
         </table>
+        <a href="index.php">Adicionar Conta</a>
     </div>
     
 

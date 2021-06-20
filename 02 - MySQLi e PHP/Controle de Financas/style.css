@@ -3,7 +3,7 @@ body {
     background-color: #516e8d;
 }
 form {
-    width: 50%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -13,6 +13,7 @@ form {
 }
 .table {
     width: 100%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
 }
