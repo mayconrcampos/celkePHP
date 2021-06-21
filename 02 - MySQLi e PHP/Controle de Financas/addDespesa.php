@@ -14,8 +14,8 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="alert alert-primary" role="alert">
-        <h1 class="font-weight-bold">Cadastrar Tipos de Despesas</h1>
+    <div class="p-3 mb-2 bg-info text-white">
+        <h1 class="display-5">Cadastrar Tipos de Despesas</h1>
     </div>
     <div class="alert alert-primary" role="alert">
         <form action="" method="post">
@@ -38,24 +38,10 @@ session_start();
         </form>
     </div>
     <div class="alert alert-primary" role="alert">
-    <a href="index.html">Adicionar Movimentação</a>
+    <a class="text-info" href="index.php">Adicionar Contas</a>
     </div>
+    <footer class="alert alert-secondary">Programa de Controle Financeiro</footer>
     
-
-    <footer><?php 
-        if($_SESSION['msg']):
-            echo $_SESSION['msg'];
-            $_SESSION['msg'] = "";
-        endif;
-    ?></footer>
-
-
-    
-
-
-
-
-
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/popper.min.js"></script>

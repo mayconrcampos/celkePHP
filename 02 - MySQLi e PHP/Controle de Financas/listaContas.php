@@ -14,13 +14,13 @@ include_once("db.php");
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="alert alert-primary" role="alert">
-        <h1>Lista de Contas</h1>
+    <div class="p-3 mb-2 bg-info text-white">
+        <h1 class="display-3">Lista de Contas</h1>
     </div>
 
-    <div class="alert alert-primary" role="alert">
+    <div class="border border-dark  alert alert-primary table-responsive" role="alert">
 
-        <table class="table table-striped table-hover table-responsive table-bordered">
+        <table class="table table-sm table-striped table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
@@ -30,6 +30,8 @@ include_once("db.php");
                     <th>Categoria</th>
                     <th>Comentário</th>
                     <th>Tipo</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,6 +48,8 @@ include_once("db.php");
                             if($tipo): $contaReceita += $conta['valor'];
                             else: $contaDespesa += $conta['valor'];
                             endif;
+
+                            $saldo = $contaReceita - $contaDespesa;
                         ?>
                         
                         <th><?php echo $conta['id'];?></th>
@@ -63,24 +67,39 @@ include_once("db.php");
                         <td><?php echo $conta['data']; ?></td>
                         <td><?php echo $conta['categoria'];?></td>
                         <td><?php echo $conta['comentario'];?></td>
-                        <td><?php $tipo = ($conta['tipo'] == 1) ? "Receita" : "Despesa"; echo $tipo;?></td>                  
+                        <td><?php $tipo = ($conta['tipo'] == 1) ? "Receita" : "Despesa"; echo $tipo;?></td>
+                        <td class="alert alert-warning"><a class="text-dark" href="editarConta.php?id=<?php echo $conta['id']; ?> " >Editar</a></td>                
+                        <td class="alert alert-danger bg-danger"><a class="text-white" href="excluirConta.php?id=<?php echo $conta['id']; ?>">Excluir</a></td>
                         
                     </tr>
                    
             <?php   } ?>
                     <tr>
                         <td></td>
-                        <td class="table-primary"><?php echo "Total Receitas (R$)";?></td>
+                        <td class="table-primary">Total Receitas (R$)</td>
                         <td class="table-primary"><?php echo number_format($contaReceita, 2, ",", ".");?></td>
-                        <td class="table-danger"><?php echo "Total Despesas (R$)"?></td>
+                        <td class="table-danger">Total Despesas (R$)</td>
                         <td class="table-danger"><?php echo number_format($contaDespesa, 2, ",", ".");?></td>
+                        <?php 
+                            if($saldo < 0):?>
+                                <td class="table-danger">Saldo R$</td>
+                                <td class="table-danger"><?php echo number_format($saldo, 2, ",", ".");?></td>
+                    <?php   else:?>
+                                <td class="table-primary">Saldo R$</td>
+                                <td class="table-primary"><?php echo number_format($saldo, 2, ",", ".");?></td>
+                    <?php   endif;?>
+                                    
+
+                             
                     </tr>
                     
                 
             </tbody>
         </table>
-        <a href="index.php">Adicionar Conta</a>
+        <a class="text-info" href="index.php">Adicionar Contas</a>
     </div>
+
+    <footer class="alert alert-secondary">Programa de Controle Financeiro</footer>
     
 
 

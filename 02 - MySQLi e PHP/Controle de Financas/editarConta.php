@@ -6,7 +6,14 @@ if($_SESSION['msg']):
     echo $_SESSION['msg'];
     
     $_SESSION['msg'] = "";
-endif;?>
+endif;
+
+$ide = $_GET['id'];
+$editaConta = mysqli_query($conn, "SELECT * FROM controle WHERE id='$ide'");
+
+$linhaConta = mysqli_fetch_assoc($editaConta);
+
+?>
 
 
 <!DOCTYPE html>
@@ -25,22 +32,22 @@ endif;?>
     </div>
     <div class="alert alert-primary" role="alert">
 
-        <form action="insereContaDB.php" method="post">
+        <form action="editaContaDB.php" method="post">
             <div class="form-group form-check form-check-inline">
             <fieldset>
-                <legend>Inserir Conta</legend>
+                <legend>Editar Conta</legend>
 
-                <input type="radio" name="filtro" value="1" class="form-check-input">
+                <input type="radio" name="filtro" class="form-check-input" <?php $checked = ($linhaConta['tipo'] == 1) ? "checked":""; echo $checked?>>
                 <label for="receitas" class="form-check-label">Receitas</label>
 
-                <input type="radio" name="filtro" value="0" class="form-check-input">
+                <input type="radio" name="filtro" value="0" class="form-check-input" <?php $checked = ($linhaConta['tipo'] == 0) ? "checked":""; echo $checked?>>
                 <label for="despesas" class="form-check-label">Despesas</label>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">Descrição</span>
                     </div>
-                    <input type="text" aria-label="First name" class="form-control" name="descricao">
+                    <input type="text" aria-label="First name" class="form-control" name="descricao" value="<?php echo $linhaConta['descricao'];?>">
                 </div><br>
 
 
@@ -49,21 +56,21 @@ endif;?>
                       <span class="input-group-text">R$</span>
                     </div>
             
-                    <input type="text" name="valor" class="form-control" aria-label="Quantia">
+                    <input type="text" name="valor" class="form-control" aria-label="Quantia" value="<?php echo $linhaConta['valor'];?>">
                 </div>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">Data</span>
                     </div>
-                    <input type="date" aria-label="First name" class="form-control" name="data">
+                    <input type="date" aria-label="First name" class="form-control" name="data" value="<?php echo $linhaConta['data'];?>">
                 </div><br>
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <label class="input-group-text" for="inputGroupSelect01" name="categoria">Categoria</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01" name="categoria">
+                    <select class="custom-select" id="inputGroupSelect01" name="categoria" selected="<?php echo $linhaConta['categoria'];?>">
                         <option selected>------ Receitas ------</option>
                       
                       <?php
@@ -94,12 +101,12 @@ endif;?>
                     <div class="input-group-prepend">
                       <span class="input-group-text">Comentários</span>
                     </div>
-                    <input type="text" aria-label="First name" class="form-control" name="comentario">
+                    <input type="text" aria-label="First name" class="form-control" name="comentario" value="<?php echo $linhaConta['comentario'];?>">
                 </div><br>
 
 
-
-                <input type="submit" value="Inserir" class="btn btn-primary btn-lg btn-block">
+                <input type="hidden" name="id" value="<?php echo $linhaConta['id'];?>">
+                <input type="submit" value="Editar" class="btn btn-primary btn-lg btn-block">
 
 
             </fieldset>

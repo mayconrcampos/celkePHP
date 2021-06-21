@@ -14,8 +14,8 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="alert alert-primary" role="alert">
-        <h1 class="font-weight-bold">Cadastrar Tipos de Receitas</h1>
+    <div class="p-3 mb-2 bg-info text-white">
+        <h1 class="display-5">Cadastrar Tipos de Receitas</h1>
     </div>
     <div class="alert alert-primary" role="alert">
         <form action="" method="post">
@@ -36,9 +36,10 @@ session_start();
             </fieldset>
             </div>
             <br>
-            <a href="index.php">Cadastrar Conta</a>
+            <a class="text-info" href="index.php">Adicionar Contas</a>
         </form>
     </div>
+    <footer class="alert alert-secondary">Programa de Controle Financeiro</footer>
 
     
 
