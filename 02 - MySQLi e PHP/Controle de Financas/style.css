@@ -1,6 +1,5 @@
 body {
     text-align: center;
-    background-color: #333940;
 }
 form {
     width: 100%;
@@ -8,7 +7,7 @@ form {
     margin-right: auto;
 }
 .alert-primary{
-    width: 90%;
+    width: 99%;
     margin: auto;
 }
 .table {

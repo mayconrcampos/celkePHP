@@ -2,11 +2,7 @@
 include_once("db.php");
 session_start();
 
-if($_SESSION['msg']):
-    echo $_SESSION['msg'];
-    
-    $_SESSION['msg'] = "";
-endif;?>
+?>
 
 
 <!DOCTYPE html>
@@ -20,21 +16,42 @@ endif;?>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="p-3 mb-2 bg-info text-white">
+    <div class="p-3 mb-2 bg-white text-dark">
         <h1 class="display-3">Controle Financeiro</h1>
+    </div>
+    <!---->
+    <div>
+        <ul class="nav nav-pills nav-fill bg-white flex-column flex-sm-row">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Adicionar Receita / Despesa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listaContas.php">Listar Todas as Contas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Receitas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Despesas</a>
+            </li>
+        </ul>
     </div>
     <div class="alert alert-primary" role="alert">
 
         <form action="insereContaDB.php" method="post">
-            <div class="form-group form-check form-check-inline">
+            <div class="form-check form-check-inline">
             <fieldset>
-                <legend>Inserir Conta</legend>
-
+                <legend>Adicionar</legend>
+                
+                <div class="alert alert-primary" role="alert">
+                <legend>Tipo de conta</legend>
                 <input type="radio" name="filtro" value="1" class="form-check-input">
-                <label for="receitas" class="form-check-label">Receitas</label>
-
+                <label for="receitas" class="form-check-label">Receita</label>
+                </div>
+                <div class="alert alert-danger" role="alert">
                 <input type="radio" name="filtro" value="0" class="form-check-input">
-                <label for="despesas" class="form-check-label">Despesas</label>
+                <label for="despesas" class="form-check-label">Despesa</label>
+                </div>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -83,11 +100,11 @@ endif;?>
                     
                 </div>
                 <div class="alert alert-primary" role="alert">
-                        <a href="addReceita.php" class="alert-link">Adiciona Receita</a>
+                        <a href="addReceita.php" class="alert-link">Adiciona Descrição de Receita</a>
                 </div>
 
                 <div class="alert alert-danger" role="alert">
-                        <a href="addDespesa.php" class="alert-link"> Adiciona Despesa</a>
+                        <a href="addDespesa.php" class="alert-link"> Adiciona Descrição de Despesa</a>
                 </div>
 
                 <div class="input-group">
@@ -105,8 +122,17 @@ endif;?>
             </fieldset>
             </div>
         </form>
-        <a href="listaContas.php">Listar Contas</a>
+        <?php
+            if($_SESSION['msg']):
+                echo $_SESSION['msg'];
+                $_SESSION['msg'] = "";
+            endif;
+
+        ?>
     </div>
+
+
+   
 
     <footer class="alert alert-secondary">Programa de Controle Financeiro</footer>
 

@@ -14,8 +14,19 @@ include_once("db.php");
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="p-3 mb-2 bg-info text-white">
-        <h1 class="display-3">Lista de Contas</h1>
+    <div class="p-3 mb-2 bg-white text-dark">
+        <h1 class="display-3">Controle Financeiro</h1>
+    </div>
+
+    <div>
+        <ul class="nav nav-pills nav-fill bg-white flex-column flex-sm-row">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Adicionar Contas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Listar Todas as Contas</a>
+            </li>
+        </ul>
     </div>
 
     <div class="border border-dark  alert alert-primary table-responsive" role="alert">
@@ -37,7 +48,7 @@ include_once("db.php");
             <tbody>
                 
                 <?php
-                    $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle");
+                    $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle ORDER BY data DESC");
                     $contaReceita = 0;
                     $contaDespesa = 0;
                     $conta = 0;
@@ -53,7 +64,7 @@ include_once("db.php");
                         ?>
                         
                         <th><?php echo $conta['id'];?></th>
-                        <td><?php echo $conta['descricao'];?></td>
+                        <td class="text-body bg-white"><?php echo $conta['descricao'];?></td>
 
                         <?php 
                         $tipo = ($conta['tipo']) ? true : false; 
@@ -64,12 +75,17 @@ include_once("db.php");
                         endif;
                         ?>
 
-                        <td><?php echo $conta['data']; ?></td>
-                        <td><?php echo $conta['categoria'];?></td>
-                        <td><?php echo $conta['comentario'];?></td>
-                        <td><?php $tipo = ($conta['tipo'] == 1) ? "Receita" : "Despesa"; echo $tipo;?></td>
-                        <td class="alert alert-warning"><a class="text-dark" href="editarConta.php?id=<?php echo $conta['id']; ?> " >Editar</a></td>                
-                        <td class="alert alert-danger bg-danger"><a class="text-white" href="excluirConta.php?id=<?php echo $conta['id']; ?>">Excluir</a></td>
+                        <td class="text-body bg-white"><?php echo $conta['data']; ?></td>
+                        
+                        <td class="text-body bg-white"><?php echo $conta['categoria'];?></td>
+                        
+                        <td class="text-body bg-white"><?php echo $conta['comentario'];?></td>
+                        
+                        <td class="text-body bg-white"><?php $tipo = ($conta['tipo'] == 1) ? "Receita" : "Despesa"; echo $tipo;?></td>
+                        
+                        <td class="alert alert-warning"><a   class="text-dark" href="editarConta.php?id=<?php echo $conta['id']; ?>"><img src="css/pencil-fill.svg"></a></td>                
+                        
+                        <td class="alert alert-danger bg-danger"><a class="text text-white" href="excluirConta.php?id=<?php echo $conta['id']; ?>"><img src="css/trash-fill.svg"></a></td>
                         
                     </tr>
                    
@@ -96,7 +112,6 @@ include_once("db.php");
                 
             </tbody>
         </table>
-        <a class="text-info" href="index.php">Adicionar Contas</a>
     </div>
 
     <footer class="alert alert-secondary">Programa de Controle Financeiro</footer>

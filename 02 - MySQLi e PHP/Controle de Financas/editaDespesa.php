@@ -1,6 +1,9 @@
 <?php
 include_once("db.php");
 session_start();
+$id = $_GET['id'];
+$queryDescDespesa = mysqli_query($conn, "SELECT * FROM cat_despesa WHERE id='$id'");
+$linha = mysqli_fetch_assoc($queryDescDespesa);
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +18,7 @@ session_start();
 </head>
 <body>
     <div class="p-3 mb-2 bg-white text-dark">
-        <h1 class="display-5">Cadastrar Tipos de Receitas</h1>
+        <h1 class="display-5">Editar Descrição de Despesas</h1>
     </div>
 
     <div>
@@ -24,10 +27,13 @@ session_start();
                 <a class="nav-link" href="index.php">Adicionar Contas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">Cadastrar Tipos de Receitas</a>
+                <a class="nav-link" href="listaContas.php">Listar Contas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="listaDescReceitas.php">Listar Todas as Descrições de Receitas</a>
+                <a class="nav-link" href="listaDescReceitas.php">Listar Todas as Descrições de Despesas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Editar Descrição de Despesa</a>
             </li>
 
         </ul>
@@ -37,16 +43,16 @@ session_start();
         <form action="" method="post">
             <div class="form-group form-check form-check-inline">
             <fieldset>
-                <legend>Inserir</legend>
+                <legend>Editar</legend>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">Descrição</span>
                     </div>
-                    <input type="text" aria-label="First name" class="form-control" name="receita">
+                    <input type="text" aria-label="First name" class="form-control" name="despesa" value="<?php echo $linha['categoria']; ?>">
                 </div><br>
 
-                <input type="submit" value="Inserir" class="btn btn-primary btn-lg btn-block">
+                <input type="submit" value="Editar" class="btn btn-primary btn-lg btn-block">
 
 
             </fieldset>
@@ -54,17 +60,18 @@ session_start();
             <br>
         </form>
         <?php
-            $receita = filter_input(INPUT_POST, "receita", FILTER_SANITIZE_STRING);
+            $despesa = filter_input(INPUT_POST, "despesa", FILTER_SANITIZE_STRING);
+            
 
-            if($receita){
-                $insertDespesa = mysqli_query($conn, "INSERT INTO cat_receita (categoria) VALUES ('$receita')");
+            if($despesa){
+                $updateDespesa = mysqli_query($conn, "UPDATE cat_despesa SET categoria='$despesa' WHERE id='$id'");
 
                 if(mysqli_affected_rows($conn)){
-                    $_SESSION['msg'] = "Receita adicionada com sucesso à lista de descrição de receitas.";
-                    header("Location: listaDescReceitas.php");
+                    $_SESSION['msg'] = "Descrição editada com com sucesso.";
+                    header("Location: listaDescDespesas.php");
                 }else{
 
-                    echo "ERRO ao adicionar nova descrição de receita.";   
+                    echo "ERRO ao editar descrição de despesa.";   
                 }
             }else{
                 echo "É necessário preencher o campo antes de inserir.";

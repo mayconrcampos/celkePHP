@@ -15,7 +15,6 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,9 +26,24 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="p-3 mb-2 bg-info text-white">
+    <div class="p-3 mb-2 bg-white text-dark">
         <h1 class="display-3">Controle Financeiro</h1>
     </div>
+
+    <div>
+        <ul class="nav nav-pills nav-fill bg-white flex-column flex-sm-row">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Adicionar Contas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listaContas.php">Listar Contas</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link active' href="#">Editar Contas</a>
+            </li>
+        </ul>
+    </div>
+
     <div class="alert alert-primary" role="alert">
 
         <form action="editaContaDB.php" method="post">
@@ -37,11 +51,15 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
             <fieldset>
                 <legend>Editar Conta</legend>
 
-                <input type="radio" name="filtro" class="form-check-input" <?php $checked = ($linhaConta['tipo'] == 1) ? "checked":""; echo $checked?>>
-                <label for="receitas" class="form-check-label">Receitas</label>
-
-                <input type="radio" name="filtro" value="0" class="form-check-input" <?php $checked = ($linhaConta['tipo'] == 0) ? "checked":""; echo $checked?>>
-                <label for="despesas" class="form-check-label">Despesas</label>
+                <div class="alert alert-primary" role="alert">
+                <legend>Tipo de conta</legend>
+                <input type="radio" name="filtro" value="1" class="form-check-input">
+                <label for="receitas" class="form-check-label">Receita</label>
+                </div>
+                <div class="alert alert-danger" role="alert">
+                <input type="radio" name="filtro" value="0" class="form-check-input">
+                <label for="despesas" class="form-check-label">Despesa</label>
+                </div>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -112,7 +130,6 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
             </fieldset>
             </div>
         </form>
-        <a href="listaContas.php">Listar Contas</a>
     </div>
 
     <footer class="alert alert-secondary">Programa de Controle Financeiro</footer>
