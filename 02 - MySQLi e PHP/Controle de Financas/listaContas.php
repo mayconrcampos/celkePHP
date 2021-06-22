@@ -51,10 +51,10 @@ include_once("db.php");
                     $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle ORDER BY data DESC");
                     $contaReceita = 0;
                     $contaDespesa = 0;
-                    $conta = 0;
+                    
                     while($conta = mysqli_fetch_assoc($queryContas)){?>
                     <tr>
-                        <?php $conta++; 
+                        <?php 
                             $tipo = ($conta['tipo']) ? true : false; 
                             if($tipo): $contaReceita += $conta['valor'];
                             else: $contaDespesa += $conta['valor'];

@@ -50,7 +50,7 @@ session_start();
                 </div>
             
                 <div class="d-inline alert alert-danger" role="alert">
-                <input type="radio" name="filtro" value="0" class="form-check-input">
+                <input type="radio" name="filtro" value="0" class="form-check-input" checked>
                 <label for="despesas" class="form-check-label">Despesa</label>
                 </div>
         
