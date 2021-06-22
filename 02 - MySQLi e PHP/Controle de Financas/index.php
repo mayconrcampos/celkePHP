@@ -36,23 +36,24 @@ session_start();
             </li>
         </ul>
     </div>
-    <div class="alert alert-primary" role="alert">
+    <div class="alert alert-primary border border-dark" role="alert">
 
         <form action="insereContaDB.php" method="post">
             <div class="form-check form-check-inline">
             <fieldset>
                 <legend>Adicionar</legend>
-                
-                <div class="alert alert-primary" role="alert">
-                <legend>Tipo de conta</legend>
+        
+        
+                <div class="d-inline alert alert-primary" role="alert">
                 <input type="radio" name="filtro" value="1" class="form-check-input">
                 <label for="receitas" class="form-check-label">Receita</label>
                 </div>
-                <div class="alert alert-danger" role="alert">
+            
+                <div class="d-inline alert alert-danger" role="alert">
                 <input type="radio" name="filtro" value="0" class="form-check-input">
                 <label for="despesas" class="form-check-label">Despesa</label>
                 </div>
-
+        
                 <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">Descrição</span>

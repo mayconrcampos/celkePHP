@@ -64,7 +64,7 @@ include_once("db.php");
                         ?>
                         
                         <th><?php echo $conta['id'];?></th>
-                        <td class="text-body bg-white"><?php echo $conta['descricao'];?></td>
+                        <td class="text-body"><?php echo $conta['descricao'];?></td>
 
                         <?php 
                         $tipo = ($conta['tipo']) ? true : false; 
@@ -75,17 +75,17 @@ include_once("db.php");
                         endif;
                         ?>
 
-                        <td class="text-body bg-white"><?php echo $conta['data']; ?></td>
+                        <td class="text-body"><?php echo $conta['data']; ?></td>
                         
-                        <td class="text-body bg-white"><?php echo $conta['categoria'];?></td>
+                        <td class="text-body"><?php echo $conta['categoria'];?></td>
                         
-                        <td class="text-body bg-white"><?php echo $conta['comentario'];?></td>
+                        <td class="text-body"><?php echo $conta['comentario'];?></td>
                         
-                        <td class="text-body bg-white"><?php $tipo = ($conta['tipo'] == 1) ? "Receita" : "Despesa"; echo $tipo;?></td>
+                        <td class="text-body"><?php $tipo = ($conta['tipo'] == 1) ? "Receita" : "Despesa"; echo $tipo;?></td>
                         
-                        <td class="alert alert-warning"><a   class="text-dark" href="editarConta.php?id=<?php echo $conta['id']; ?>"><img src="css/pencil-fill.svg"></a></td>                
+                        <td class="alert"><a   class="text-dark" href="editarConta.php?id=<?php echo $conta['id']; ?>"><img src="css/pencil-fill.svg"></a></td>                
                         
-                        <td class="alert alert-danger bg-danger"><a class="text text-white" href="excluirConta.php?id=<?php echo $conta['id']; ?>"><img src="css/trash-fill.svg"></a></td>
+                        <td class="alert"><a class="text text-white" href="excluirConta.php?id=<?php echo $conta['id']; ?>"><img src="css/trash-fill.svg"></a></td>
                         
                     </tr>
                    

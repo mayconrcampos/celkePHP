@@ -51,12 +51,13 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
             <fieldset>
                 <legend>Editar Conta</legend>
 
-                <div class="alert alert-primary" role="alert">
-                <legend>Tipo de conta</legend>
+                <div class="d-inline alert alert-primary" role="alert">
+                
                 <input type="radio" name="filtro" value="1" class="form-check-input">
                 <label for="receitas" class="form-check-label">Receita</label>
                 </div>
-                <div class="alert alert-danger" role="alert">
+
+                <div class="d-inline alert alert-danger" role="alert">
                 <input type="radio" name="filtro" value="0" class="form-check-input">
                 <label for="despesas" class="form-check-label">Despesa</label>
                 </div>
