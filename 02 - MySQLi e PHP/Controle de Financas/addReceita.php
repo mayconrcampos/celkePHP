@@ -88,9 +88,14 @@ session_start();
                     echo "ERRO ao adicionar nova descrição de receita.";   
                 }
             }else{
-                echo "É necessário preencher o campo antes de inserir.";
+                $_SESSION['msg'] = "É necessário preencher o campo antes de inserir.";
             
             }
+
+            if($_SESSION['msg']):
+              echo $_SESSION['msg'];
+              $_SESSION['msg'] = "";
+            endif;
             
         ?>
     </div>
