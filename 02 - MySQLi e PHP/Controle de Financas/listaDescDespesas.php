@@ -13,29 +13,50 @@ session_start();
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="p-3 mb-2 bg-white text-dark">
-        <h1 class="display-5">Cadastrar Nova Descrição de Despesa</h1>
-    </div>
 
-        <div>
-            <ul class="nav nav-pills nav-fill bg-white flex-column flex-sm-row">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Adicionar Contas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="addDespesa.php">Cadastrar Descrição de Despesa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Listar Todas as Descrições de Despesas</a>
-                </li>
 
-            </ul>
+
+<body style="background-color:#ffefe6">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FFEFE6">
+  <a class="navbar-brand" href="index.php"><img src="css/money.png" width="320px" alt=""></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="listaContas.php">Todas as Contas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Somente Receitas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Somente Despesas</a>
+      </li>
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Add/Remover Descrições de Gastos
+        </a>
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#FFDFCC">
+          <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
+          <a class="dropdown-item" href="listaDescReceitas.php">Lista de Tipos de Receitas</a>
+          <hr>
+          <a class="dropdown-item" href="addDespesa.php">Cadastrar Novo Tipo de Despesa</a>
+          <a class="dropdown-item" href="#">Lista de Tipos de Despesas</a>
         </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-        <div class="border border-dark  alert alert-primary table-responsive" role="alert">
+        <div class="border table-responsive" style="background-color:#FFDFCC">
             <table class="table table-sm table-striped table-hover table-bordered">
-                <thead class="thead-dark">
+                <thead class="thead">
                     <tr>
                         <th>ID</th>
                         <th>Descrição</th>
@@ -68,7 +89,7 @@ session_start();
     </div>
 
     
-    <footer class="alert alert-secondary">Programa de Controle Financeiro</footer>
+    <footer style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
 
     
     <script src="js/jquery-3.5.1.slim.min.js"></script>

@@ -9,7 +9,7 @@ if($_SESSION['msg']):
 endif;
 
 $ide = $_GET['id'];
-$editaConta = mysqli_query($conn, "SELECT * FROM controle WHERE id='$ide'");
+$editaConta = mysqli_query($conn, "SELECT descricao, valor, DATE_FORMAT(data, '%Y-%m-%d') as 'data', categoria, comentario, tipo FROM controle WHERE id='$ide'");
 
 $linhaConta = mysqli_fetch_assoc($editaConta);
 
@@ -25,26 +25,47 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="p-3 mb-2 bg-white text-dark">
-        <h1 class="display-3">Controle Financeiro</h1>
-    </div>
 
-    <div>
-        <ul class="nav nav-pills nav-fill bg-white flex-column flex-sm-row">
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Adicionar Contas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="listaContas.php">Listar Contas</a>
-            </li>
-            <li class="nav-item">
-                <a class='nav-link active' href="#">Editar Contas</a>
-            </li>
-        </ul>
-    </div>
 
-    <div class="alert alert-primary" role="alert">
+<body style="background-color:#ffefe6">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FFEFE6">
+  <a class="navbar-brand" href="index.php"><img src="css/money.png" width="320px" alt=""></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="listaContas.php">Todas as Contas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Somente Receitas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Somente Despesas</a>
+      </li>
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Add/Remover Descrições de Gastos
+        </a>
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#FFDFCC">
+          <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
+          <a class="dropdown-item" href="listaDescReceitas.php">Lista de Tipos de Receitas</a>
+          <hr>
+          <a class="dropdown-item" href="#">Cadastrar Novo Tipo de Despesa</a>
+          <a class="dropdown-item" href="listaDescDespesas.php">Lista de Tipos de Despesas</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div style="background-color:#FFDFCC">
 
         <form action="editaContaDB.php" method="post">
             <div class="form-group form-check form-check-inline">
@@ -53,12 +74,16 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
 
                 <div class="d-inline alert alert-primary" role="alert">
                 
-                <input type="radio" name="filtro" value="1" class="form-check-input">
+                <?php
+                    $checkedReceita = ($linhaConta['tipo']) ? "checked" : "";
+                    $checkedDespesa = (!$linhaConta['tipo']) ? "checked" : "";
+                ?>
+                <input type="radio" name="filtro" value="1" class="form-check-input" <?php echo $checkedReceita; ?>>
                 <label for="receitas" class="form-check-label">Receita</label>
                 </div>
 
                 <div class="d-inline alert alert-danger" role="alert">
-                <input type="radio" name="filtro" value="0" class="form-check-input">
+                <input type="radio" name="filtro" value="0" class="form-check-input" <?php echo $checkedDespesa; ?>>
                 <label for="despesas" class="form-check-label">Despesa</label>
                 </div>
 
@@ -89,7 +114,7 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
                     <div class="input-group-prepend">
                       <label class="input-group-text" for="inputGroupSelect01" name="categoria">Categoria</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01" name="categoria" selected="<?php echo $linhaConta['categoria'];?>">
+                    <select class="custom-select" id="inputGroupSelect01" name="categoria" value="">
                         <option selected>------ Receitas ------</option>
                       
                       <?php
@@ -105,6 +130,7 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
                             <option value=<?php echo $despesa['categoria']; ?>><?php echo $despesa['categoria'] ;?></option>
                 <?php   
                         }?>
+                        <option selected><?php echo $linhaConta['categoria'];?></option>
                     </select>
                     
                 </div>
@@ -133,14 +159,7 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
         </form>
     </div>
 
-    <footer class="alert alert-secondary">Programa de Controle Financeiro</footer>
-
-
-    
-
-
-
-
+    <footer style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
 
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
