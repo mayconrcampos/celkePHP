@@ -38,3 +38,4 @@ if($descricao and $valor and $data and $categoria){
     $_SESSION['msg'] = "ERRO! É necessário preencher todos os campos do formulário.";
     
 }
+
