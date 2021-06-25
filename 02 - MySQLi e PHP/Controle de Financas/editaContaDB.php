@@ -21,21 +21,21 @@ $valor = valida_float($valor);
 $data = $_POST['data'];
 $categoria = filter_input(INPUT_POST, "categoria", FILTER_SANITIZE_STRING);
 $comentario = filter_input(INPUT_POST, "comentario", FILTER_SANITIZE_STRING);
-$filtro = filter_input(INPUT_POST, "filtro", FILTER_SANITIZE_NUMBER_INT);
+$filtro = $_POST['filtro'];
 
-if($descricao and $valor and $data and $categoria){
-    $insereConta = mysqli_query($conn, "UPDATE controle SET descricao='$descricao', valor='$valor', data='$data', categoria='$categoria', comentario='$comentario' WHERE id='$id'");
+if(isset($descricao) and isset($valor) and isset($data) and isset($filtro)){
+    $insereConta = mysqli_query($conn, "UPDATE controle SET descricao='$descricao', valor='$valor', data='$data', categoria='$categoria', comentario='$comentario', tipo='$filtro' WHERE id='$id'");
 
     if(mysqli_affected_rows($conn)){
-        echo $_SESSION['msg'] = "Conta inserida com sucesso.";
+        echo $_SESSION['editaconta'] = "Conta editada com sucesso.";
         header("Location: listaContas.php");
     }else{
-        echo $_SESSION['msg'] = "Erro ao inserir conta.";
-        header("Location: index.php");
+        echo $_SESSION['editaconta'] = "Erro ao editar conta.";
+        header("Location: listaContas.php");
     }
 }else{
-    header("Location: index.php");
     $_SESSION['msg'] = "ERRO! É necessário preencher todos os campos do formulário.";
+    header("Location: listaContas.php");
     
 }
 

@@ -85,7 +85,7 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
                     <div class="input-group-prepend">
                       <span class="input-group-text">Descrição</span>
                     </div>
-                    <input type="text" aria-label="First name" class="form-control" name="descricao" value="<?php echo $linhaConta['descricao'];?>">
+                    <input type="text" aria-label="First name" class="form-control" name="descricao" value="<?php echo $linhaConta['descricao'];?>" required>
                 </div><br>
 
 
@@ -94,14 +94,14 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
                       <span class="input-group-text">R$</span>
                     </div>
             
-                    <input type="text" name="valor" class="form-control" aria-label="Quantia" value="<?php echo $linhaConta['valor'];?>">
+                    <input type="text" name="valor" class="form-control" aria-label="Quantia" value="<?php echo $linhaConta['valor'];?>" required>
                 </div>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">Data</span>
                     </div>
-                    <input type="date" aria-label="First name" class="form-control" name="data" value="<?php echo $linhaConta['data'];?>">
+                    <input type="date" aria-label="First name" class="form-control" name="data" value="<?php echo $linhaConta['data'];?>" required>
                 </div><br>
 
                 <div class="input-group mb-3">
@@ -144,7 +144,7 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
                 </div><br>
 
 
-                <input type="hidden" name="id" value="<?php echo $linhaConta['id'];?>">
+                <input type="hidden" name="id" value="<?php echo $ide;?>">
                 <input type="submit" value="Editar" class="btn btn-primary btn-lg btn-block">
 
 

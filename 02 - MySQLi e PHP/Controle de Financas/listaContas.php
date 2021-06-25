@@ -29,7 +29,7 @@ include_once("db.php");
         <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="listaContas.php">Listar Contas / Filtrar por</a>
+        <a class="nav-link" href="#">Listar Contas / Filtrar por</a>
       </li>
    
      
@@ -56,7 +56,10 @@ include_once("db.php");
     <div class="col-md-4">
       <input type="text" class="form-control" name="filtrar" placeholder="Digite neste campo para filtrar">
       <small id="passwordHelpBlock" class="form-text text-muted">
-            Digite: 0 - Filtrar por Despesa | 1 - Filtrar por Receitas
+            Digite: "despesa" p/ Filtrar todas as despesas
+        </small>
+        <small id="passwordHelpBlock" class="form-text text-muted">
+            Digite: "receita" p/ Filtrar todas as receitas
         </small>
     </div>
     <div class="col-md-3">
@@ -76,6 +79,12 @@ include_once("db.php");
     </div>
   </div>
 </form>
+<?php
+  if($_SESSION['editaconta']){
+    echo $_SESSION['editaconta'];
+    $_SESSION['editaconta'] = "";
+  }
+?>
 </div>
 
 
@@ -112,8 +121,10 @@ include_once("db.php");
                       $data_fim = date("Y/m/d");
                       $data_inicio = date("Y/m")."/01";
                     }
+                    $filtraDespesa = ($filtrar == "receita") ? "1":"0";
+
                     // Aqui é a query pra filtrar o banco de dados
-                    $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%' OR tipo LIKE '%$filtrar%') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC"); // com esse comando em cima
+                    $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%' OR tipo LIKE '%$filtraDespesa%') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC"); // com esse comando em cima
                     $contaReceita = 0;
                     $contaDespesa = 0;
                                         
