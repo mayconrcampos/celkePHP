@@ -28,14 +28,9 @@ session_start();
         <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="listaContas.php">Todas as Contas</a>
+        <a class="nav-link" href="listaContas.php">Listar Contas / Filtrar por</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Receitas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Despesas</a>
-      </li>
+   
      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,7 +40,7 @@ session_start();
           <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
           <a class="dropdown-item" href="#">Lista de Tipos de Receitas</a>
           <hr>
-          <a class="dropdown-item" href="addDespesa">Cadastrar Novo Tipo de Despesa</a>
+          <a class="dropdown-item" href="addDespesa.php">Cadastrar Novo Tipo de Despesa</a>
           <a class="dropdown-item" href="listaDescDespesas.php">Lista de Tipos de Despesas</a>
         </div>
       </li>

@@ -29,14 +29,9 @@ include_once("db.php");
         <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Todas as Contas</a>
+        <a class="nav-link" href="listaContas.php">Listar Contas / Filtrar por</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Receitas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Despesas</a>
-      </li>
+   
      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,6 +48,36 @@ include_once("db.php");
     </ul>
   </div>
 </nav>
+
+<!-- Filtrar por alguma coisa que o usuário digitar --->
+<div class="border border-dark" style="background-color:#FFDFCC">
+<form action="" method="POST">
+  <div class="row">
+    <div class="col-md-4">
+      <input type="text" class="form-control" name="filtrar" placeholder="Digite neste campo para filtrar">
+      <small id="passwordHelpBlock" class="form-text text-muted">
+            Digite: 0 - Filtrar por Despesa | 1 - Filtrar por Receitas
+        </small>
+    </div>
+    <div class="col-md-3">
+      <input type="date" class="form-control" name="data_ini" placeholder="Digite neste campo para filtrar">
+        <small id="passwordHelpBlock" class="form-text text-muted">
+            Data Início
+        </small>
+    </div>
+    <div class="col-md-3">
+      <input type="date" class="form-control" name="data_fim" placeholder="Digite neste campo para filtrar">
+      <small id="passwordHelpBlock" class="form-text text-muted">
+            Data Fim
+        </small>
+    </div>
+    <div class="col-mb-2">
+      <input type="submit" class="form-control" value="Filtrar">
+    </div>
+  </div>
+</form>
+</div>
+
 
     <div class="border border-dark table-responsive" style="background-color:#FFDFCC">
 
@@ -73,10 +98,25 @@ include_once("db.php");
             <tbody>
                 
                 <?php
-                    $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle ORDER BY data DESC");
+
+                    $filtrar = filter_input(INPUT_POST, "filtrar", FILTER_SANITIZE_STRING);
+
+                    $data_inicio = $_POST['data_ini'];
+                    $data_fim = $_POST['data_fim'];
+                    
+                    // junto com esses if's, temos aquele resultado na procura.
+                    if($filtrar and !$data_inicio and !$data_fim){
+                        $data_fim = date("Y/m/d");
+                        $data_inicio = date("Y/m")."/01";
+                    }elseif(!$filtrar and !$data_inicio and !$data_fim){
+                      $data_fim = date("Y/m/d");
+                      $data_inicio = date("Y/m")."/01";
+                    }
+                    // Aqui é a query pra filtrar o banco de dados
+                    $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%' OR tipo LIKE '%$filtrar%') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC"); // com esse comando em cima
                     $contaReceita = 0;
                     $contaDespesa = 0;
-                    
+                                        
                     while($conta = mysqli_fetch_assoc($queryContas)){?>
                     <tr>
                         <?php 
@@ -128,22 +168,14 @@ include_once("db.php");
                     <?php   else:?>
                                 <td class="table-primary">Saldo R$</td>
                                 <td class="table-primary"><?php echo number_format($saldo, 2, ",", ".");?></td>
-                    <?php   endif;?>
-                                    
-
-                             
+                    <?php   endif;?>     
                     </tr>
-                    
-                
             </tbody>
         </table>
     </div>
 
     <footer style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
     
-
-
-
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/popper.min.js"></script>

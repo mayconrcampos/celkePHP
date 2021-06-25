@@ -29,14 +29,9 @@ session_start();
         <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="listaContas.php">Todas as Contas</a>
+        <a class="nav-link" href="listaContas.php">Listar Contas / Filtrar por</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Receitas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Despesas</a>
-      </li>
+    
      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

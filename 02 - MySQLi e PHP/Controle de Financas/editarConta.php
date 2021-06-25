@@ -40,13 +40,7 @@ $linhaConta = mysqli_fetch_assoc($editaConta);
         <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="listaContas.php">Todas as Contas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Receitas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Despesas</a>
+        <a class="nav-link" href="listaContas.php">Listar Contas / Filtrar por</a>
       </li>
      
       <li class="nav-item dropdown">

@@ -31,14 +31,9 @@ session_start();
         <a class="nav-link" href="#">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="listaContas.php">Todas as Contas</a>
+        <a class="nav-link" href="listaContas.php">Listar Contas / Filtrar por</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Receitas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Somente Despesas</a>
-      </li>
+
      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -87,12 +82,12 @@ session_start();
         
         
                 <div class="d-inline alert alert-primary" role="alert">
-                <input type="radio" name="filtro" value="1" class="form-check-input">
+                <input type="radio" name="filtro" value="1" class="form-check-input" >
                 <label for="receitas" class="form-check-label">Receita</label>
                 </div>
             
                 <div class="d-inline alert alert-danger" role="alert">
-                <input type="radio" name="filtro" value="0" class="form-check-input" checked>
+                <input type="radio" name="filtro" value="0" class="form-check-input" checked >
                 <label for="despesas" class="form-check-label">Despesa</label>
                 </div>
         
@@ -100,7 +95,7 @@ session_start();
                     <div class="input-group-prepend">
                       <span class="input-group-text">Descrição</span>
                     </div>
-                    <input type="text" aria-label="First name" class="form-control" name="descricao">
+                    <input type="text" aria-label="First name" class="form-control" name="descricao" required>
                 </div><br>
 
 
@@ -109,21 +104,23 @@ session_start();
                       <span class="input-group-text">R$</span>
                     </div>
             
-                    <input type="text" name="valor" class="form-control" aria-label="Quantia">
+                    <input type="text" name="valor" class="form-control" aria-label="Quantia" required>
                 </div>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">Data</span>
                     </div>
-                    <input type="date" aria-label="First name" class="form-control" name="data">
+                    <input type="date" aria-label="First name" class="form-control" name="data" required>
                 </div><br>
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <label class="input-group-text" for="inputGroupSelect01" name="categoria">Categoria</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01" name="categoria">
+
+
+                    <select class="custom-select" id="inputGroupSelect01" name="categoria" required>
                         <option selected>------ Receitas ------</option>
                       
                       <?php
