@@ -198,8 +198,7 @@ include_once("db.php");
                         
                         <td class="alert"><a   class="text-dark" href="editarConta.php?id=<?php echo $conta['id']; ?>"><img src="css/pencil-fill.svg"></a></td>                
                         
-                        <td class="alert"><a class="text text-white" href="excluirConta.php?id=<?php echo $conta['id']; ?>"><img src="css/trash-fill.svg"></a></td>
-                        
+                        <td class="alert"><a class="text text-white" href="excluirConta.php?id=<?php echo $conta['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este registro?');"><img src="css/trash-fill.svg"></a></td>
                     </tr>
                    
             <?php   } ?>

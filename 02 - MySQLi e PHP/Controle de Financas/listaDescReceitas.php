@@ -67,7 +67,7 @@ session_start();
                             <th><?php echo $linha['id']; ?></th>
                             <td><?php echo $linha['categoria']; ?></td>
                             <td><a href="editaReceita.php?id=<?php echo $linha['id']; ?>"><img src="css/pencil-fill.svg"></a></td>
-                            <td><a href="excluiReceita.php?id=<?php echo $linha['id']; ?>"><img src="css/trash-fill.svg"></a></td>
+                            <td><a href="excluiReceita.php?id=<?php echo $linha['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este registro?');"><img src="css/trash-fill.svg"></a></td>
                         </tr>
             <?php   }   ?>
                 </tbody>

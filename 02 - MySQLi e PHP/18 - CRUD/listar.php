@@ -46,37 +46,13 @@ $id = $_GET['id'];
                 ."<td>".$linhaClientes['nasc']."</td>"
                 ."<td>".$linhaClientes['email']."</td>"
                 ."<td><a href='atualizar.php?id=".$linhaClientes['id']."'>Editar</a></td>"
-                ."<td><a href=".confirmaDEL("deletar.php?id=".$linhaClientes['id']).">Excluir</a></td>";
-               
+                ."<td><a href='deletar.php?id=".$linhaClientes['id']."'onclick=\"return confirm('Tem certeza que deseja deletar esse registro?');\">Excluir</a></td>"; 
    } 
 
         ?>
 
     </table>
     </div>
-
-    <script>
-            function confirma(url) {
-                if (confirm("keres mesmo apagar?")) {
-                    document.location = url;
-
-                }
-
-            }
-    </script>
-
-    <?php
-
-        function  confirmaDEL($url){
-            echo '<script type="text/javascript"> ';
-            echo " function openulr(".$url.") {";
-            echo '  if(confirm("Você tem certeza?")) {';
-            echo "    document.location = ".$url."";
-            echo '  }';
-            echo '}';
-            echo '</script>';
-        }
-        ?>
 
 
     <div>
@@ -95,36 +71,6 @@ $id = $_GET['id'];
     </div>
 
 
-
-<?php function modal() { ?>
-    <?php include_once("listar.php");?>
-    <?php $id = $_GET['id']; ?>
-
-    <div class='modal' tabindex='-1' id='confirma'>
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Confirmar</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                              </button>
-                              </div>
-                              <div class="modal-body">
-                                  <p>Você tem certeza que quer excluir o registro <?php echo $id; ?> ? </p>
-                              </div>
-                              <div class="modal-footer">
-                                  <form action="deletar.php?id=<?php echo $id;?>" id="form" method="GET">
-                                  <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancela</button>
-                                  <button type="submit" class="btn btn-primary">Confirma</button>
-                                  </form>
-                              </div>
-                          </div>
-                      </div>
-                </div>
-    <?php }?>
-
-
-                    
 
 
 
