@@ -15,7 +15,7 @@ session_start();
 </head>
 <!-- Início da Nav -->
 <body style="background-color:#ffefe6">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FFEFE6">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#FFEFE6">
   <a class="navbar-brand" href="#"><img src="css/money.png" width="320px" alt=""></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,7 +149,7 @@ session_start();
 
    
 
-    <footer style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
+    <footer class="fixed-bottom"  style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
 
 
     
