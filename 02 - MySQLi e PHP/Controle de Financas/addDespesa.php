@@ -59,7 +59,7 @@ session_start();
                     <div class="input-group-prepend">
                       <span class="input-group-text">Descrição</span>
                     </div><br>
-                    <input type="text" aria-label="First name" class="form-control" name="despesa">
+                    <input type="text" aria-label="First name" class="form-control" name="despesa" required autofocus>
                 </div><br>
 
                 <input type="submit" value="Inserir" class="btn btn-primary btn-lg btn-block">

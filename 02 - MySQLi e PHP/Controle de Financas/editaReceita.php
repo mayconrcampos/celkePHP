@@ -60,7 +60,7 @@ $linha = mysqli_fetch_assoc($queryDescReceita);
                     <div class="input-group-prepend">
                       <span class="input-group-text">Descrição</span>
                     </div>
-                    <input type="text" aria-label="First name" class="form-control" name="receita" value="<?php echo $linha['categoria']; ?>">
+                    <input type="text" aria-label="First name" class="form-control" name="receita" value="<?php echo $linha['categoria']; ?>" autofocus required>
                 </div><br>
 
                 <input type="submit" value="Editar" class="btn btn-primary btn-lg btn-block">

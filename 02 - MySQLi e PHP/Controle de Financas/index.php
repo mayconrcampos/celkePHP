@@ -3,8 +3,6 @@ include_once("db.php");
 session_start();
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,9 +13,7 @@ session_start();
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
-
-
+<!-- Início da Nav -->
 <body style="background-color:#ffefe6">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FFEFE6">
   <a class="navbar-brand" href="#"><img src="css/money.png" width="320px" alt=""></a>
@@ -51,28 +47,7 @@ session_start();
   </div>
 </nav>
 
-
-    <!--<div class="p-3 mb-2 bg-white text-dark">
-        <h1 class="display-3">Controle Financeiro</h1>
-    </div>
-    -->
-    
-    <!--<div>
-        <ul class="nav nav-pills nav-fill bg-white flex-column flex-sm-row">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Adicionar Receita / Despesa</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="listaContas.php">Listar Todas as Contas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Receitas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Despesas</a>
-            </li>
-        </ul>
-    </div>-->
+<!--Início da form-->
     <div class=" border border-dark" style="background-color:#FFDFCC">
 
         <form action="insereContaDB.php" method="post">
@@ -95,7 +70,7 @@ session_start();
                     <div class="input-group-prepend">
                       <span class="input-group-text">Descrição</span>
                     </div>
-                    <input type="text" aria-label="First name" class="form-control" name="descricao" required>
+                    <input type="text" aria-label="First name" class="form-control" name="descricao" required autofocus>
                 </div><br>
 
 

@@ -54,7 +54,7 @@ include_once("db.php");
 <form action="" method="POST">
   <div class="row">
     <div class="col-md-4">
-      <input type="text" class="form-control" name="filtrar" placeholder="Digite neste campo para filtrar">
+      <input type="text" class="form-control" name="filtrar" placeholder="Digite neste campo para filtrar" autofocus>
       <small id="passwordHelpBlock" class="form-text text-muted">
             Digite: "despesa" p/ Filtrar todas as despesas
         </small>
@@ -107,24 +107,61 @@ include_once("db.php");
             <tbody>
                 
                 <?php
-
                     $filtrar = filter_input(INPUT_POST, "filtrar", FILTER_SANITIZE_STRING);
 
                     $data_inicio = $_POST['data_ini'];
                     $data_fim = $_POST['data_fim'];
                     
-                    // junto com esses if's, temos aquele resultado na procura.
                     if($filtrar and !$data_inicio and !$data_fim){
                         $data_fim = date("Y/m/d");
                         $data_inicio = date("Y/m")."/01";
+                        $filtrado = null;
+
+                        if($filtrar == "receita"){
+                          $filtrado = 1;
+                          $filtrar = null;
+
+                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '%$filtrado%' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+
+                        }elseif($filtrar == "despesa"){
+                          $filtrado = 0;
+                          $filtrar = null;
+
+                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '%$filtrado%' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+
+                        }else{
+                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                        }
+                        
+
                     }elseif(!$filtrar and !$data_inicio and !$data_fim){
                       $data_fim = date("Y/m/d");
                       $data_inicio = date("Y/m")."/01";
-                    }
-                    $filtraDespesa = ($filtrar == "receita") ? "1":"0";
+                      $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
 
-                    // Aqui é a query pra filtrar o banco de dados
-                    $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%' OR tipo LIKE '%$filtraDespesa%') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC"); // com esse comando em cima
+
+                    }elseif($filtrar and $data_inicio and $data_fim){
+                      $filtrado = "";
+                      if($filtrar == "receita"){
+                        $filtrado = 1;
+                        $filtrar = null;
+
+                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '$filtrado' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+
+                      }elseif($filtrar == "despesa"){
+                        $filtrado = 0;
+                        $filtrar = null;
+
+                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '$filtrado' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+
+                      }else{
+                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                      }
+
+                    }elseif(!$filtrar and $data_inicio and $data_fim){
+                      $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                    }
+                    
                     $contaReceita = 0;
                     $contaDespesa = 0;
                                         
