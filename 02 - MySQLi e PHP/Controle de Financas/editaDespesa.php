@@ -18,8 +18,8 @@ $linha = mysqli_fetch_assoc($queryDescDespesa);
 </head>
 
 
-<body style="background-color:#ffefe6">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FFEFE6">
+<body style="background-color:#ffdfcc">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffdfcc">
   <a class="navbar-brand" href="index.php"><img src="css/money.png" width="320px" alt=""></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@ $linha = mysqli_fetch_assoc($queryDescDespesa);
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add/Remover Descrições de Gastos
         </a>
-        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#FFDFCC">
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#ffefe6">
           <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
           <a class="dropdown-item" href="listaDescReceitas.php">Lista de Tipos de Receitas</a>
           <hr>
@@ -50,11 +50,11 @@ $linha = mysqli_fetch_assoc($queryDescDespesa);
   </div>
 </nav>
 
-    <div style="background-color:#f8d7da">
+    <div style="background-color:#ffefe6">
         <form action="" method="post">
             <div class="form-group form-check form-check-inline">
             <fieldset>
-                <legend>Editar</legend>
+                <legend>Editar Descrição da Saída</legend>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -91,7 +91,7 @@ $linha = mysqli_fetch_assoc($queryDescDespesa);
             
         ?>
     </div>
-    <footer style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
+    <footer style="background-color:#ffdfcc">Programa de Controle Financeiro</footer>
 
     
     <script src="js/jquery-3.5.1.slim.min.js"></script>

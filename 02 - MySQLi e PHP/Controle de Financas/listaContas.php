@@ -16,8 +16,8 @@ include_once("db.php");
 
 
 
-<body style="background-color:#ffefe6">
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#FFEFE6">
+<body style="background-color:#ffdfcc">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#ffdfcc">
   <a class="navbar-brand" href="index.php"><img src="css/money.png" width="320px" alt=""></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@ include_once("db.php");
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add/Remover Descrições de Gastos
         </a>
-        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#FFDFCC">
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#ffefe6">
           <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
           <a class="dropdown-item" href="listaDescReceitas.php">Lista de Tipos de Receitas</a>
           <hr>
@@ -50,7 +50,7 @@ include_once("db.php");
 </nav>
 
 <!-- Filtrar por alguma coisa que o usuário digitar --->
-<div class="border border-dark" style="background-color:#FFDFCC">
+<div class="border border-dark" style="background-color:#ffefe6">
 <form action="" method="POST">
   <div class="row">
     <div class="col-md-4">
@@ -88,7 +88,7 @@ include_once("db.php");
 </div>
 
 
-    <div class="border border-dark table-responsive" style="background-color:#FFDFCC">
+    <div class="border border-dark table-responsive" style="background-color:#ffefe6">
 
         <table class="table table-sm table-striped table-hover table-bordered">
             <thead class="thead">
@@ -221,7 +221,7 @@ include_once("db.php");
         </table>
     </div>
 
-    <footer class="fixed-bottom" style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
+    <footer class="fixed-bottom" style="background-color:#ffdfcc">Programa de Controle Financeiro</footer>
     
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

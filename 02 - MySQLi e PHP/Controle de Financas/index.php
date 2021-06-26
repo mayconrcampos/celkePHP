@@ -14,8 +14,8 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <!-- Início da Nav -->
-<body style="background-color:#ffefe6">
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#FFEFE6">
+<body style="background-color:#FFDFCC">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#FFDFCC">
   <a class="navbar-brand" href="#"><img src="css/money.png" width="320px" alt=""></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@ session_start();
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add/Remover Descrições de Gastos
         </a>
-        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#FFDFCC">
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#ffefe6">
           <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
           <a class="dropdown-item" href="listaDescReceitas.php">Lista de Tipos de Receitas</a>
           <hr>
@@ -47,13 +47,13 @@ session_start();
   </div>
 </nav>
 
-<!--Início da form-->
-    <div class=" border border-dark" style="background-color:#FFDFCC">
+<!--Início da form FFDFCC-->
+    <div class=" border border-dark" style="background-color:#ffefe6">
 
         <form action="insereContaDB.php" method="post">
             <div class="form-check form-check-inline">
             <fieldset>
-                <legend>Adicionar</legend>
+                <legend>Adicionar Nova Conta</legend>
         
         
                 <div class="d-inline alert alert-primary" role="alert">
@@ -149,7 +149,7 @@ session_start();
 
    
 
-    <footer class="fixed-bottom"  style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
+    <footer class="fixed-bottom"  style="background-color:#ffdfcc">Programa de Controle Financeiro</footer>
 
 
     

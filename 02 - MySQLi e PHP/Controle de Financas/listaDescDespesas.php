@@ -16,8 +16,8 @@ session_start();
 
 
 
-<body style="background-color:#ffefe6">
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#FFEFE6">
+<body style="background-color:#ffdfcc">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#ffdfcc">
   <a class="navbar-brand" href="index.php"><img src="css/money.png" width="320px" alt=""></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@ session_start();
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Add/Remover Descrições de Gastos
         </a>
-        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#FFDFCC">
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#ffefe6">
           <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
           <a class="dropdown-item" href="listaDescReceitas.php">Lista de Tipos de Receitas</a>
           <hr>
@@ -49,7 +49,7 @@ session_start();
   </div>
 </nav>
 
-        <div class="border table-responsive" style="background-color:#FFDFCC">
+        <div class="border table-responsive" style="background-color:#ffefe6">
             <table class="table table-sm table-striped table-hover table-bordered">
                 <thead class="thead">
                     <tr>
@@ -84,7 +84,7 @@ session_start();
     </div>
 
     
-    <footer class="fixed-bottom" style="background-color:#FFEFE6">Programa de Controle Financeiro</footer>
+    <footer class="fixed-bottom" style="background-color:#ffdfcc">Programa de Controle Financeiro</footer>
 
     
     <script src="js/jquery-3.5.1.slim.min.js"></script>
