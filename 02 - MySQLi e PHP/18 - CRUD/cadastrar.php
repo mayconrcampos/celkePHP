@@ -1,10 +1,20 @@
 <?php
 session_start();
+
 if($_SESSION['msg']):
     echo $_SESSION['msg'];
     $_SESSION['msg'] = "";
 endif;
+
+if($_SESSION['logado'] == true){
+    echo $_SESSION['msgLogado'];
+}else{
+    $_SESSION['logado'] = "Você precisa se logar no sistema.";
+    header("Location: index.php");
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +54,7 @@ endif;
     </div>
     <a href="listar.php">Listar</a>
     <a href="pesquisar.php"> - Pesquisar</a>
+  
 
     <br><br><hr>
     <footer>Estudos de PHP - Maycon R. Campos</footer>
