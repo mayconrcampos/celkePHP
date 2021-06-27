@@ -54,6 +54,7 @@ if($_SESSION['logado'] == true){
     </div>
     <a href="listar.php">Listar</a>
     <a href="pesquisar.php"> - Pesquisar</a>
+    <a href="sair.php"> - Fazer Logoff</a>
   
 
     <br><br><hr>

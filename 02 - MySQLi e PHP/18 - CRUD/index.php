@@ -58,6 +58,10 @@ session_start();
                 echo $_SESSION['teste'];
                 unset($_SESSION['teste']);
             }
+            if($_SESSION['naoexiste']){
+                echo $_SESSION['naoexiste'];
+                unset($_SESSION['naoexiste']);
+            }
             ?>
         </p>
 </div>
