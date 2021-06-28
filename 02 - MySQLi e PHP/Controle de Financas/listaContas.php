@@ -37,21 +37,7 @@ if($_SESSION['logado']){
         <a class="nav-link" href="index1.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Listar Contas / Filtrar por</a>
-      </li>
-   
-     
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Add/Remover Descrições de Gastos
-        </a>
-        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#ffefe6">
-          <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
-          <a class="dropdown-item" href="listaDescReceitas.php">Lista de Tipos de Receitas</a>
-          <hr>
-          <a class="dropdown-item" href="addDespesa.php">Cadastrar Novo Tipo de Despesa</a>
-          <a class="dropdown-item" href="listaDescDespesas.php">Lista de Tipos de Despesas</a>
-        </div>
+        <a class="nav-link" href="#"><img src="./css/list-ul.svg" width="25px"> Listar Contas / Filtrar por</a>
       </li>
     </ul>
   </div>
@@ -59,7 +45,7 @@ if($_SESSION['logado']){
 <h6 class="text text-danger" style="text-align: left;">Usuário: <?php echo $userlogin; ?> <a href="sair.php">Sair</a></h6>
 
 <!-- Filtrar por alguma coisa que o usuário digitar --->
-<div class="border border-dark" style="background-color:#ffefe6">
+<div class="border border-dark sticky-top" style="background-color:#ffefe6">
 <form action="" method="POST">
   <div class="row">
     <div class="col-md-4">
@@ -102,7 +88,6 @@ if($_SESSION['logado']){
         <table class="table table-sm table-striped table-hover table-bordered">
             <thead class="thead">
                 <tr>
-                    <th>ID User</th>
                     <th>Descrição</th>
                     <th>Valor (R$)</th>
                     <th>Data</th>
@@ -185,7 +170,6 @@ if($_SESSION['logado']){
                             $saldo = $contaReceita - $contaDespesa;
                         ?>
                         
-                        <th>usuario</th>
                         <td class="text-body"><?php echo $conta['descricao'];?></td>
 
                         <?php 
@@ -211,27 +195,26 @@ if($_SESSION['logado']){
                     </tr>
                    
             <?php   } ?>
-                    <tr>
-                        <td></td>
-                        <td class="table-primary">Total Receitas (R$)</td>
-                        <td class="table-primary"><?php echo number_format($contaReceita, 2, ",", ".");?></td>
-                        <td class="table-danger">Total Despesas (R$)</td>
-                        <td class="table-danger"><?php echo number_format($contaDespesa, 2, ",", ".");?></td>
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+                    <tr class="fixed-bottom">
+                        <td class="table-primary border rounded">Total Receitas <strong>(R$)</strong></td>
+                        <td class="table-primary border rounded"><?php echo number_format($contaReceita, 2, ",", ".");?></td>
+                        <td class="table-danger border rounded">Total Despesas <strong>(R$)</strong></td>
+                        <td class="table-danger border rounded"><?php echo number_format($contaDespesa, 2, ",", ".");?></td>
                         <?php 
                             if($saldo < 0):?>
-                                <td class="table-danger">Saldo R$</td>
-                                <td class="table-danger"><?php echo number_format($saldo, 2, ",", ".");?></td>
+                                <td class="table-danger border rounded">Saldo <strong>(R$)</strong></td>
+                                <td class="table-danger border rounded"><?php echo number_format($saldo, 2, ",", ".");?></td>
                     <?php   else:?>
-                                <td class="table-primary">Saldo R$</td>
-                                <td class="table-primary"><?php echo number_format($saldo, 2, ",", ".");?></td>
+                                <td class="table-primary border rounded">Saldo <strong>(R$)</strong></td>
+                                <td class="table-primary border rounded"><?php echo number_format($saldo, 2, ",", ".");?></td>
                     <?php   endif;?>     
                     </tr>
             </tbody>
         </table>
     </div>
-
-    <footer class="fixed-bottom" style="background-color:#ffdfcc">Programa de Controle Financeiro</footer>
-    
+  
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/popper.min.js"></script>

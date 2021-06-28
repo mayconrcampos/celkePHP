@@ -36,7 +36,7 @@ if($_SESSION['logado']){
         <a class="nav-link" href="index1.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="listaContas.php">Listar Contas / Filtrar por</a>
+        <a class="nav-link" href="listaContas.php"><img src="./css/list-ul.svg" width="25px"> Listar Contas / Filtrar por</a>
       </li>
    
      
@@ -46,10 +46,10 @@ if($_SESSION['logado']){
         </a>
         <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" style="background-color:#ffefe6">
           <a class="dropdown-item" href="addReceita.php">Cadastrar Novo Tipo de Receita</a>
-          <a class="dropdown-item" href="#">Lista de Tipos de Receitas</a>
+          <a class="dropdown-item" href="#"><img src="./css/list-ul.svg" width="25px"> Lista de Tipos de Receitas</a>
           <hr>
           <a class="dropdown-item" href="addDespesa.php">Cadastrar Novo Tipo de Despesa</a>
-          <a class="dropdown-item" href="listaDescDespesas.php">Lista de Tipos de Despesas</a>
+          <a class="dropdown-item" href="listaDescDespesas.php"><img src="./css/list-ul.svg" width="25px"> Lista de Tipos de Despesas</a>
         </div>
       </li>
     </ul>
