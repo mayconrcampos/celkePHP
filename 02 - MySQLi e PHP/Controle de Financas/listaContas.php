@@ -34,7 +34,7 @@ if($_SESSION['logado']){
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="index1.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index1.php"><img src="./css/add.png" width="25px"> Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#"><img src="./css/list-ul.svg" width="25px"> Listar Contas / Filtrar por</a>
@@ -46,7 +46,7 @@ if($_SESSION['logado']){
 
 <!-- Filtrar por alguma coisa que o usuário digitar --->
 <div class="border border-dark sticky-top" style="background-color:#ffefe6">
-<form action="" method="POST">
+<form action="" method="POST" class="p-2">
   <div class="row">
     <div class="col-md-4">
       <input type="text" class="form-control" name="filtrar" placeholder="Digite neste campo para filtrar" autofocus>
@@ -70,7 +70,7 @@ if($_SESSION['logado']){
         </small>
     </div>
     <div class="col-mb-2">
-      <input type="submit" class="form-control" value="Filtrar">
+      <input type="submit" class="form-control" value="Filtrar" class="p-3">
     </div>
   </div>
 </form>
@@ -197,7 +197,7 @@ if($_SESSION['logado']){
             <?php   } ?>
                     <tr><td></td></tr>
                     <tr><td></td></tr>
-                    <tr class="fixed-bottom">
+                    <tr class="fixed-bottom p-1">
                         <td class="table-primary border rounded">Total Receitas <strong>(R$)</strong></td>
                         <td class="table-primary border rounded"><?php echo number_format($contaReceita, 2, ",", ".");?></td>
                         <td class="table-danger border rounded">Total Despesas <strong>(R$)</strong></td>
