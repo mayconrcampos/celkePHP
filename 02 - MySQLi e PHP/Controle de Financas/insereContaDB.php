@@ -28,10 +28,10 @@ if($descricao and $valor and $data and $categoria){
         header("Location: listaContas.php");
     }else{
         echo $_SESSION['msg'] = "Erro ao inserir conta.";
-        header("Location: index.php");
+        header("Location: index1.php");
     }
 }else{
-    header("Location: index.php");
+    header("Location: index1.php");
     $_SESSION['msg'] = "ERRO! É necessário preencher todos os campos do formulário.";
     
 }

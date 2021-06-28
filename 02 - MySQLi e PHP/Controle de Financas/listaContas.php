@@ -1,6 +1,14 @@
 <?php
 session_start();
 include_once("db.php");
+
+if($_SESSION['logado']){
+  $userlogin = $_SESSION['usuario'];
+  $iduser = $_SESSION['id'];
+}else{
+  $_SESSION['msglogado'] = "Fazer login para acessar o sistema.";
+  header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +26,7 @@ include_once("db.php");
 
 <body style="background-color:#ffdfcc">
 <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#ffdfcc">
-  <a class="navbar-brand" href="index.php"><img src="css/money.png" width="320px" alt=""></a>
+  <a class="navbar-brand" href="index1.php"><img src="css/money.png" width="320px" alt=""></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,7 +34,7 @@ include_once("db.php");
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index1.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Listar Contas / Filtrar por</a>
@@ -48,6 +56,7 @@ include_once("db.php");
     </ul>
   </div>
 </nav>
+<h6 class="text text-danger" style="text-align: left;">Usuário: <?php echo $userlogin; ?> <a href="sair.php">Sair</a></h6>
 
 <!-- Filtrar por alguma coisa que o usuário digitar --->
 <div class="border border-dark" style="background-color:#ffefe6">
@@ -93,7 +102,7 @@ include_once("db.php");
         <table class="table table-sm table-striped table-hover table-bordered">
             <thead class="thead">
                 <tr>
-                    <th>ID</th>
+                    <th>ID User</th>
                     <th>Descrição</th>
                     <th>Valor (R$)</th>
                     <th>Data</th>
@@ -176,7 +185,7 @@ include_once("db.php");
                             $saldo = $contaReceita - $contaDespesa;
                         ?>
                         
-                        <th><?php echo $conta['id'];?></th>
+                        <th>usuario</th>
                         <td class="text-body"><?php echo $conta['descricao'];?></td>
 
                         <?php 

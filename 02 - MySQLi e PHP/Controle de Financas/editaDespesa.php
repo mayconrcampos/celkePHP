@@ -4,6 +4,14 @@ session_start();
 $id = $_GET['id'];
 $queryDescDespesa = mysqli_query($conn, "SELECT * FROM cat_despesa WHERE id='$id'");
 $linha = mysqli_fetch_assoc($queryDescDespesa);
+
+if($_SESSION['logado']){
+  $userlogin = $_SESSION['usuario'];
+  $iduser = $_SESSION['id'];
+}else{
+  $_SESSION['msglogado'] = "Fazer login para acessar o sistema.";
+  header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +28,7 @@ $linha = mysqli_fetch_assoc($queryDescDespesa);
 
 <body style="background-color:#ffdfcc">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#ffdfcc">
-  <a class="navbar-brand" href="index.php"><img src="css/money.png" width="320px" alt=""></a>
+  <a class="navbar-brand" href="index1.php"><img src="css/money.png" width="320px" alt=""></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,7 +36,7 @@ $linha = mysqli_fetch_assoc($queryDescDespesa);
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="index.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index1.php">Adicionar Receita / Despesa <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="listaContas.php">Listar Contas / Filtrar por</a>
@@ -49,6 +57,8 @@ $linha = mysqli_fetch_assoc($queryDescDespesa);
     </ul>
   </div>
 </nav>
+<h6 class="text text-danger" style="text-align: left;">Usuário: <?php echo $userlogin; ?> <a href="sair.php">Sair</a></h6>
+
 
     <div style="background-color:#ffefe6">
         <form action="" method="post">
