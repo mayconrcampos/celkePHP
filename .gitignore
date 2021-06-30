@@ -42,3 +42,292 @@
 02 - MySQLi e PHP/Controle de Financas/js/bootstrap.min.js.map
 02 - MySQLi e PHP/Controle de Financas/js/jquery-3.5.1.slim.min.js
 02 - MySQLi e PHP/Controle de Financas/js/popper.min.js
+04 - PHPMailer/phpmailer/COMMITMENT
+04 - PHPMailer/phpmailer/composer.json
+04 - PHPMailer/phpmailer/get_oauth_token.php
+04 - PHPMailer/phpmailer/LICENSE
+04 - PHPMailer/phpmailer/phpunit.xml.dist
+04 - PHPMailer/phpmailer/README.md
+04 - PHPMailer/phpmailer/SECURITY.md
+04 - PHPMailer/phpmailer/VERSION
+04 - PHPMailer/phpmailer/language/phpmailer.lang-af.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ar.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-az.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ba.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-be.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-bg.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ca.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ch.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-cs.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-da.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-de.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-el.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-eo.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-es.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-et.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-fa.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-fi.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-fo.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-fr.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-gl.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-he.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-hi.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-hr.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-hu.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-hy.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-id.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-it.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ja.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ka.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ko.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-lt.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-lv.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-mg.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ms.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-nb.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-nl.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-pl.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-pt_br.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-pt.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ro.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-ru.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-sk.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-sl.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-sr_latn.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-sr.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-sv.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-tl.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-tr.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-uk.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-vi.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-zh_cn.php
+04 - PHPMailer/phpmailer/language/phpmailer.lang-zh.php
+04 - PHPMailer/phpmailer/src/Exception.php
+04 - PHPMailer/phpmailer/src/OAuth.php
+04 - PHPMailer/phpmailer/src/PHPMailer.php
+04 - PHPMailer/phpmailer/src/POP3.php
+04 - PHPMailer/phpmailer/src/SMTP.php
+04 - PHPMailer/composer.json
+04 - PHPMailer/composer.lock
+04 - PHPMailer/enviar_email.php
+04 - PHPMailer/vendor/autoload.php
+04 - PHPMailer/vendor/composer/autoload_classmap.php
+04 - PHPMailer/vendor/composer/autoload_namespaces.php
+04 - PHPMailer/vendor/composer/autoload_psr4.php
+04 - PHPMailer/vendor/composer/autoload_real.php
+04 - PHPMailer/vendor/composer/autoload_static.php
+04 - PHPMailer/vendor/composer/ClassLoader.php
+04 - PHPMailer/vendor/composer/installed.json
+04 - PHPMailer/vendor/composer/installed.php
+04 - PHPMailer/vendor/composer/InstalledVersions.php
+04 - PHPMailer/vendor/composer/LICENSE
+04 - PHPMailer/vendor/composer/platform_check.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/COMMITMENT
+04 - PHPMailer/vendor/phpmailer/phpmailer/composer.json
+04 - PHPMailer/vendor/phpmailer/phpmailer/get_oauth_token.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/LICENSE
+04 - PHPMailer/vendor/phpmailer/phpmailer/phpunit.xml.dist
+04 - PHPMailer/vendor/phpmailer/phpmailer/README.md
+04 - PHPMailer/vendor/phpmailer/phpmailer/SECURITY.md
+04 - PHPMailer/vendor/phpmailer/phpmailer/VERSION
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-af.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ar.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-az.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ba.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ch.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-de.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-el.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-eo.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-es.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-et.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-fa.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-fi.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-fo.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-fr.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-gl.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-he.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-hi.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-hr.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-hu.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-hy.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-id.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-it.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ja.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ka.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ko.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-pl.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt_br.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ro.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-ru.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-sk.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-sl.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr_latn.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-sv.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-tl.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-tr.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-uk.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/src/Exception.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/src/OAuth.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/src/PHPMailer.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/src/POP3.php
+04 - PHPMailer/vendor/phpmailer/phpmailer/src/SMTP.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-af.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ar.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-az.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ba.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-be.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-bg.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ca.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ch.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-cs.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-da.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-de.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-el.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-eo.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-es.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-et.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-fa.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-fi.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-fo.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-fr.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-gl.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-he.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-hi.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-hr.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-hu.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-hy.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-id.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-it.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ja.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ka.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ko.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-lt.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-lv.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-mg.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ms.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-nb.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-nl.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-pl.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-pt_br.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-pt.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ro.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-ru.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-sk.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-sl.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-sr_latn.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-sr.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-sv.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-tl.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-tr.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-uk.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-vi.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-zh_cn.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/language/phpmailer.lang-zh.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/src/Exception.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/src/OAuth.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/src/PHPMailer.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/src/POP3.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/src/SMTP.php
+02 - MySQLi e PHP/18 - CRUD/vendor/autoload.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/autoload_classmap.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/autoload_namespaces.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/autoload_psr4.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/autoload_real.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/autoload_static.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/ClassLoader.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/installed.json
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/installed.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/InstalledVersions.php
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/LICENSE
+02 - MySQLi e PHP/18 - CRUD/vendor/composer/platform_check.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/COMMITMENT
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/composer.json
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/get_oauth_token.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/LICENSE
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/phpunit.xml.dist
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/README.md
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/SECURITY.md
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/VERSION
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-af.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ar.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-az.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ba.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ch.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-de.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-el.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-eo.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-es.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-et.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-fa.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-fi.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-fo.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-fr.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-gl.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-he.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-hi.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-hr.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-hu.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-hy.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-id.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-it.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ja.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ka.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ko.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-pl.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt_br.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ro.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-ru.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-sk.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-sl.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr_latn.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-sv.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-tl.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-tr.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-uk.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/src/Exception.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/src/OAuth.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/src/PHPMailer.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/src/POP3.php
+02 - MySQLi e PHP/18 - CRUD/vendor/phpmailer/phpmailer/src/SMTP.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/VERSION
+02 - MySQLi e PHP/18 - CRUD/phpmailer/SECURITY.md
+02 - MySQLi e PHP/18 - CRUD/phpmailer/README.md
+02 - MySQLi e PHP/18 - CRUD/phpmailer/phpunit.xml.dist
+02 - MySQLi e PHP/18 - CRUD/phpmailer/LICENSE
+02 - MySQLi e PHP/18 - CRUD/phpmailer/get_oauth_token.php
+02 - MySQLi e PHP/18 - CRUD/phpmailer/composer.json
+02 - MySQLi e PHP/18 - CRUD/phpmailer/COMMITMENT
+02 - MySQLi e PHP/18 - CRUD/composer.lock
+02 - MySQLi e PHP/18 - CRUD/composer.json
