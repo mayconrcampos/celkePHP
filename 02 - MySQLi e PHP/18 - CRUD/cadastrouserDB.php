@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include("email.php");
 include_once("db.php");
 
 
@@ -8,7 +8,8 @@ if(isset($_POST['useremail']) and isset($_POST['usersenha']) and isset($_POST['r
     if($_POST['usersenha'] == $_POST['repitausersenha']){
         // Proteção contra caracteres de escape para evitar SQL Injection.
         $usuario = mysqli_real_escape_string($conn, $_POST['useremail']);
-
+        
+        // Verificar se usuário já existe na base de dados
         $queryUser = mysqli_query($conn, "SELECT usuario FROM userlogin WHERE usuario='$usuario'");
         $linha = mysqli_fetch_assoc($queryUser);
         
@@ -17,10 +18,14 @@ if(isset($_POST['useremail']) and isset($_POST['usersenha']) and isset($_POST['r
             // Tratando usuario 
             $usuario = mysqli_real_escape_string($conn, $_POST['useremail']);
             $senha = md5(mysqli_real_escape_string($conn, $_POST['usersenha']));
+            $status = 0;
          
-            $insertUsers = mysqli_query($conn, "INSERT INTO userlogin (usuario, senha) VALUES ('$usuario', '$senha')");
+            $insertUsers = mysqli_query($conn, "INSERT INTO userlogin (usuario, senha, status) VALUES ('$usuario', '$senha', '$status')");
 
+            //sendEmail($usuario);
             if(mysqli_affected_rows($conn)){
+                sendEmail($usuario);
+
                 $_SESSION['sucesso'] = "Usuário cadastrado com Sucesso!";
                 header("Location: index.php");
             }else{

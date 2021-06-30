@@ -1,6 +1,5 @@
 <?php
     session_start();
-   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -57,6 +56,8 @@
                     echo $_SESSION['existe'];
                     unset($_SESSION['existe']);
                 }
+
+                
             ?>
         </p>
 

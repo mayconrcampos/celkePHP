@@ -54,14 +54,16 @@ session_start();
                 unset($_SESSION['testeuser']);
 
             }
-            if($_SESSION['teste']){
-                echo $_SESSION['teste'];
-                unset($_SESSION['teste']);
+            if($_SESSION['email']){
+                echo $_SESSION['email'];
+                unset($_SESSION['email']);
             }
             if($_SESSION['naoexiste']){
                 echo $_SESSION['naoexiste'];
                 unset($_SESSION['naoexiste']);
+
             }
+
             ?>
         </p>
 </div>

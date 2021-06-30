@@ -18,17 +18,28 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
         header("Location: index.php");
 
     }else{
-        $queryUserlogin = mysqli_query($conn, "SELECT usuario, senha FROM userlogin WHERE usuario='$usuario' AND senha='$senha'");
-        $resultado = mysqli_fetch_assoc($queryUserlogin);
-        
+
+        $queryUserStatus = mysqli_query($conn, "SELECT usuario, senha FROM userlogin WHERE usuario='$usuario' AND status='1'");
+        $resultado = mysqli_fetch_assoc($queryUserStatus);
+
         if(empty($resultado)){
+            //sendEmail($usuario);
+            $_SESSION['errologin'] = "Usuário com status Inativo. Favor verificar caixa de email para ativar sua conta. ou clicar aqui. <a href=email.php?usuario=".$usuario.">Clique aqui para reenviar email.</a>";
             $_SESSION['logado'] = false;
-            $_SESSION['errologin'] = "Usuário ou senha incorretos.";
             header("Location: index.php");
         }else{
-            $_SESSION['logado'] = true;
-            $_SESSION['msgLogado'] = "Bem vindo! ".$usuario."";
-            header("Location: cadastrar.php");
+            $queryUserlogin = mysqli_query($conn, "SELECT id, usuario, senha FROM userlogin WHERE usuario='$usuario' AND senha='$senha' AND status='1'");
+            $resultado = mysqli_fetch_assoc($queryUserlogin);
+            if(empty($resultado)){
+                $_SESSION['logado'] = false;
+                $_SESSION['errologin'] = "Usuário ou senha incorretos.";
+                header("Location: index.php");
+            }else{
+                $_SESSION['logado'] = true;
+                $_SESSION['iduser'] = $resultado['id'];
+                $_SESSION['msgLogado'] = "Bem vindo! ".$usuario."";
+                header("Location: cadastrar.php");
+            }
         }
     }
     
