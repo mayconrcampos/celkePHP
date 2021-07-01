@@ -24,7 +24,7 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 
         if(empty($resultado)){
             //sendEmail($usuario);
-            $_SESSION['errologin'] = "Usuário com status Inativo. Favor verificar caixa de email para ativar sua conta. ou clicar aqui. <a href=email.php?usuario=".$usuario.">Clique aqui para reenviar email.</a>";
+            $_SESSION['errologin'] = "Usuário com status Inativo. Favor verificar caixa de email para ativar sua conta.<br> <a href=email.php?usuario=".$usuario.">Clique aqui para reenviar email.</a>";
             $_SESSION['logado'] = false;
             header("Location: index.php");
         }else{

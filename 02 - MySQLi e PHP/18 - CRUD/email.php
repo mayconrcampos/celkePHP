@@ -73,7 +73,7 @@ function sendEmail($user){
     $envia = $Mailer->send();
 
     if($envia){
-        $_SESSION['email'] = "<br>Mensagem enviada com sucesso<br>. Verificar sua caixa de email.";
+        $_SESSION['email'] = "<br>Email enviado com sucesso<br>. Favor verificar sua caixa de email.";
         header("Location: index.php");
     }else{
         $_SESSION['email'] = "ERRO:".$Mailer->ErrorInfo."  <a href=".sendEmail($user).">Clique aqui para Enviar novamente.</a>";

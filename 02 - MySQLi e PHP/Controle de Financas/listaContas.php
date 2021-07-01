@@ -2,6 +2,10 @@
 session_start();
 include_once("db.php");
 
+// DEFINE O FUSO HORARIO COMO O HORARIO DE BRASILIA
+date_default_timezone_set('America/Sao_Paulo');
+
+// Mantendo ID do usuário em variável global.
 if($_SESSION['logado']){
   $userlogin = $_SESSION['usuario'];
   $iduser = $_SESSION['id'];
@@ -109,6 +113,7 @@ if($_SESSION['logado']){
                     if($filtrar and !$data_inicio and !$data_fim){
                         $data_fim = date("Y/m/d");
                         $data_inicio = date("Y/m")."/01";
+                        
                         $filtrado = null;
 
                         if($filtrar == "receita"){
@@ -131,6 +136,7 @@ if($_SESSION['logado']){
                     }elseif(!$filtrar and !$data_inicio and !$data_fim){
                       $data_fim = date("Y/m/d");
                       $data_inicio = date("Y/m")."/01";
+                      
                       $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
 
 

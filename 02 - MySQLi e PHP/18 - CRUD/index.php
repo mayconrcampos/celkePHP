@@ -49,9 +49,9 @@ session_start();
                 echo $_SESSION['logado'];
                 unset($_SESSION['logado']);
             }
-            if($_SESSION['testeuser']){
-                echo $_SESSION['testeuser'];
-                unset($_SESSION['testeuser']);
+            if($_SESSION['ativada']){
+                echo $_SESSION['ativada'];
+                unset($_SESSION['ativada']);
 
             }
             if($_SESSION['email']){
