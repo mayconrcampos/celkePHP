@@ -113,6 +113,7 @@ if($_SESSION['logado']){
                     if($filtrar and !$data_inicio and !$data_fim){
                         $data_fim = date("Y/m/d");
                         $data_inicio = date("Y/m")."/01";
+                        echo $data_inicio." - ".$data_fim;
                         
                         $filtrado = null;
 
@@ -126,7 +127,7 @@ if($_SESSION['logado']){
                           $filtrado = 0;
                           $filtrar = null;
 
-                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '%$filtrado%' AND AND iduser='$iduser' data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '%$filtrado%' AND iduser='$iduser' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
 
                         }else{
                           $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%' AND iduser='$iduser') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");

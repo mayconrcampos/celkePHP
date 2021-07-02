@@ -24,7 +24,7 @@ if($_SESSION['logado']){
 <!-- Início da Nav -->
 <body style="background-color:#FFDFCC">
 <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#FFDFCC">
-  <a class="navbar-brand" href="#"><img src="css/money.png" width="320px" alt=""></a>
+  <a class="navbar-brand" href="#"><img src="css/money.png" width="320px"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
