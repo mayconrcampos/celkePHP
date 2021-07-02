@@ -63,7 +63,6 @@ if($_SESSION['logado']){
             <table class="table table-sm table-striped table-hover table-bordered">
                 <thead class="thead">
                     <tr>
-                        <th>ID</th>
                         <th>Descrição</th>
                         <th>Editar</th>
                         <th>Excluir</th>
@@ -76,7 +75,6 @@ if($_SESSION['logado']){
                     while($linha = mysqli_fetch_assoc($queryDescDespesas)){ 
                         $conta++;                                           ?>
                         <tr>
-                            <th><?php echo $linha['id']; ?></th>
                             <td><?php echo $linha['categoria']; ?></td>
                             <td><a href="editaDespesa.php?id=<?php echo $linha['id']; ?>"><img src="css/pencil-fill.svg"></a></td>
                             <td><a href="excluiDespesa.php?id=<?php echo $linha['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este registro?');"><img src="css/trash-fill.svg"></a></td>

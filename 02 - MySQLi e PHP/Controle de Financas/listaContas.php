@@ -164,8 +164,9 @@ if($_SESSION['logado']){
                     
                     $contaReceita = 0;
                     $contaDespesa = 0;
-                                        
-                    while($conta = mysqli_fetch_assoc($queryContas)){?>
+                    $vazio = 0;         
+                    while($conta = mysqli_fetch_assoc($queryContas)){
+                        $vazio++;                                     ?>
                     <tr>
                         <?php 
                             $tipo = ($conta['tipo']) ? true : false; 
@@ -219,6 +220,20 @@ if($_SESSION['logado']){
                     </tr>
             </tbody>
         </table>
+        <?php 
+          if($vazio == 0){
+            echo "<h5>Não há nenhuma conta cadastrada!</h5>";
+            echo "<a href='index1.php'>Clique aqui para cadastrar!</a>";
+          }
+          if($_SESSION['contaExcluida']){
+            echo $_SESSION['contaExcluida'];
+            unset($_SESSION['contaExcluida']);
+          }
+          if($_SESSION['contaInserida']){
+            echo $_SESSION['contaInserida'];
+            unset($_SESSION['contaInserida']);
+          }
+        ?>
     </div>
   
     <script src="js/jquery-3.5.1.slim.min.js"></script>

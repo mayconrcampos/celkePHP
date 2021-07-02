@@ -26,7 +26,7 @@ if($descricao and $valor and $data and $categoria){
     $insereConta = mysqli_query($conn, "INSERT INTO controle (descricao, valor, data, categoria, comentario, tipo, iduser) VALUES ('$descricao', '$valor', '$data', '$categoria','$comentario', '$filtro', '$iduser')");
 
     if(mysqli_affected_rows($conn)){
-        echo $_SESSION['msg'] = "Conta inserida com sucesso.";
+        echo $_SESSION['contaInserida'] = "<br>Conta inserida com sucesso.";
         header("Location: listaContas.php");
     }else{
         echo $_SESSION['msg'] = "Erro ao inserir conta.";
