@@ -4,7 +4,7 @@ session_start();
 
 if($_SESSION['logado']){
   $userlogin = $_SESSION['usuario'];
-  $iduser = $_SESSION['id'];
+  $iduser = $_SESSION['iduser'];
 }else{
   $_SESSION['msglogado'] = "Fazer login para acessar o sistema.";
   header("Location: index.php");
@@ -108,14 +108,14 @@ if($_SESSION['logado']){
                         <option selected>------ Receitas ------</option>
                       
                       <?php
-                        $queryReceitas = mysqli_query($conn, "SELECT id, categoria FROM cat_receita ORDER BY categoria ASC");
+                        $queryReceitas = mysqli_query($conn, "SELECT id, categoria FROM cat_receita WHERE iduser='$iduser' ORDER BY categoria ASC");
                         while($receita = mysqli_fetch_assoc($queryReceitas)){?>
                             <option value=<?php echo $receita['categoria']; ?>><?php echo $receita['categoria'] ;?></option>
                 <?php   
                         }?>
                         <option selected>------ Despesas ------</option>
                         <?php
-                        $queryDespesas = mysqli_query($conn, "SELECT id, categoria FROM cat_despesa ORDER BY categoria ASC");
+                        $queryDespesas = mysqli_query($conn, "SELECT id, categoria FROM cat_despesa WHERE iduser='$iduser' ORDER BY categoria ASC");
                         while($despesa = mysqli_fetch_assoc($queryDespesas)){?>
                             <option value=<?php echo $despesa['categoria']; ?>><?php echo $despesa['categoria'] ;?></option>
                 <?php   

@@ -4,7 +4,8 @@ session_start();
 
 if($_SESSION['logado']){
   $userlogin = $_SESSION['usuario'];
-  $iduser = $_SESSION['id'];
+  $iduser = $_SESSION['iduser'];
+
 }else{
   $_SESSION['msglogado'] = "Fazer login para acessar o sistema.";
   header("Location: index.php");
@@ -82,7 +83,7 @@ if($_SESSION['logado']){
             $receita = filter_input(INPUT_POST, "receita", FILTER_SANITIZE_STRING);
 
             if($receita){
-                $insertDespesa = mysqli_query($conn, "INSERT INTO cat_receita (categoria) VALUES ('$receita')");
+                $insertDespesa = mysqli_query($conn, "INSERT INTO cat_receita (categoria, iduser) VALUES ('$receita', '$iduser')");
 
                 if(mysqli_affected_rows($conn)){
                     $_SESSION['msg'] = "Receita adicionada com sucesso à lista de descrição de receitas.";

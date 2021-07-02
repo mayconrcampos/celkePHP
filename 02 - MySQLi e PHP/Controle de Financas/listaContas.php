@@ -8,7 +8,7 @@ date_default_timezone_set('America/Sao_Paulo');
 // Mantendo ID do usuário em variável global.
 if($_SESSION['logado']){
   $userlogin = $_SESSION['usuario'];
-  $iduser = $_SESSION['id'];
+  $iduser = $_SESSION['iduser'];
 }else{
   $_SESSION['msglogado'] = "Fazer login para acessar o sistema.";
   header("Location: index.php");
@@ -120,16 +120,16 @@ if($_SESSION['logado']){
                           $filtrado = 1;
                           $filtrar = null;
 
-                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '%$filtrado%' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '%$filtrado%' AND iduser='$iduser' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
 
                         }elseif($filtrar == "despesa"){
                           $filtrado = 0;
                           $filtrar = null;
 
-                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '%$filtrado%' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '%$filtrado%' AND AND iduser='$iduser' data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
 
                         }else{
-                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                          $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%' AND iduser='$iduser') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
                         }
                         
 
@@ -137,7 +137,7 @@ if($_SESSION['logado']){
                       $data_fim = date("Y/m/d");
                       $data_inicio = date("Y/m")."/01";
                       
-                      $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                      $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE iduser='$iduser' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
 
 
                     }elseif($filtrar and $data_inicio and $data_fim){
@@ -146,20 +146,20 @@ if($_SESSION['logado']){
                         $filtrado = 1;
                         $filtrar = null;
 
-                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '$filtrado' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '$filtrado' AND iduser='$iduser' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
 
                       }elseif($filtrar == "despesa"){
                         $filtrado = 0;
                         $filtrar = null;
 
-                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '$filtrado' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE tipo LIKE '$filtrado' AND iduser='$iduser' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
 
                       }else{
-                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                        $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE (descricao LIKE '%$filtrar%' OR categoria LIKE '%$filtrar%' OR comentario LIKE '%$filtrar%' AND iduser='$iduser') AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
                       }
 
                     }elseif(!$filtrar and $data_inicio and $data_fim){
-                      $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
+                      $queryContas = mysqli_query($conn, "SELECT id, descricao, valor, DATE_FORMAT(data, '%d/%m/%Y') as 'data', categoria, comentario, tipo FROM controle  WHERE iduser='$iduser' AND data BETWEEN '$data_inicio' AND '$data_fim' ORDER BY data DESC");
                     }
                     
                     $contaReceita = 0;

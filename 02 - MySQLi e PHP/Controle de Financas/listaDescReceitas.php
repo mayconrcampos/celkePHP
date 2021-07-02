@@ -4,7 +4,7 @@ session_start();
 
 if($_SESSION['logado']){
   $userlogin = $_SESSION['usuario'];
-  $iduser = $_SESSION['id'];
+  $iduser = $_SESSION['iduser'];
 }else{
   $_SESSION['msglogado'] = "Fazer login para acessar o sistema.";
   header("Location: index.php");
@@ -70,19 +70,29 @@ if($_SESSION['logado']){
                 </thead>
                 <tbody>
                 <?php 
-                    $queryDescReceitas = mysqli_query($conn, "SELECT * FROM cat_receita ORDER BY categoria");
+                    $queryDescReceitas = mysqli_query($conn, "SELECT * FROM cat_receita WHERE iduser='$iduser' ORDER BY categoria");
                     
-                    while($linha = mysqli_fetch_assoc($queryDescReceitas)){ ?>
+                    $conta = 0;
+                    while($linha = mysqli_fetch_assoc($queryDescReceitas)){ 
+                        $conta++;                                           ?>
                         <tr>
                             <th><?php echo $linha['id']; ?></th>
                             <td><?php echo $linha['categoria']; ?></td>
                             <td><a href="editaReceita.php?id=<?php echo $linha['id']; ?>"><img src="css/pencil-fill.svg"></a></td>
                             <td><a href="excluiReceita.php?id=<?php echo $linha['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este registro?');"><img src="css/trash-fill.svg"></a></td>
                         </tr>
-            <?php   }   ?>
-                </tbody>
+            <?php   }   
+                    if($conta == 0){
+                      echo "Não há Nenhuma Descrição de Receitas em sua lista. Comece a cadastrar agora mesmo!<br>";
+                      echo "<a href='addReceita.php'>Clique aqui para Cadastrar uma Nova Descrição.</a>";
+                    }else{  ?>
+                     </tbody>
             </table>
+                      <a href='addReceita.php'>Clique aqui para Cadastrar uma Nova Descrição.</a>
+            <?php   } ?>  
+               
         </div>
+  
         
     </div>
     <footer class="fixed-bottom" style="background-color:#ffdfcc">Programa de Controle Financeiro</footer>

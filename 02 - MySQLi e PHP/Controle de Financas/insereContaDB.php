@@ -11,6 +11,7 @@ function valida_float($num){
         return (double) $num;
     }
 }
+//1660+440
 
 $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_STRING);
 $valor = filter_input(INPUT_POST, "valor");
@@ -19,9 +20,10 @@ $data = $_POST['data'];
 $categoria = filter_input(INPUT_POST, "categoria", FILTER_SANITIZE_STRING);
 $comentario = filter_input(INPUT_POST, "comentario", FILTER_SANITIZE_STRING);
 $filtro = filter_input(INPUT_POST, "filtro", FILTER_SANITIZE_NUMBER_INT);
+$iduser = $_SESSION['iduser'];
 
 if($descricao and $valor and $data and $categoria){
-    $insereConta = mysqli_query($conn, "INSERT INTO controle (descricao, valor, data, categoria, comentario, tipo) VALUES ('$descricao', '$valor', '$data', '$categoria','$comentario', '$filtro')");
+    $insereConta = mysqli_query($conn, "INSERT INTO controle (descricao, valor, data, categoria, comentario, tipo, iduser) VALUES ('$descricao', '$valor', '$data', '$categoria','$comentario', '$filtro', '$iduser')");
 
     if(mysqli_affected_rows($conn)){
         echo $_SESSION['msg'] = "Conta inserida com sucesso.";

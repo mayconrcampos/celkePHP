@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("db.php");
+include("email.php");
 
 if(isset($_POST['usuario']) and isset($_POST['senha']) and isset($_POST['senha2'])){
     // Verificando se as duas senhas inseridas são iguais.
@@ -15,10 +16,12 @@ if(isset($_POST['usuario']) and isset($_POST['senha']) and isset($_POST['senha2'
 
         if(empty($existeResultado)){
             // Inserir usuário e senha no banco de dados;
-            $insereUser = mysqli_query($conn, "INSERT INTO userlogin (usuario, senha) VALUES ('$usuario', '$senha')");
+            $status = 0;
+            $insereUser = mysqli_query($conn, "INSERT INTO userlogin (usuario, senha, status) VALUES ('$usuario', '$senha', '$status')");
 
             // Testando se usuário foi inserido com sucesso.
             if(mysqli_affected_rows($conn)){
+                sendEmail($usuario);
                 $_SESSION['msgsucesso'] = "Usuário adicionado com sucesso!";
                 header("Location: index.php");
             }else{

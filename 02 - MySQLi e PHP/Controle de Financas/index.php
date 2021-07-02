@@ -67,6 +67,14 @@ session_start();
                     echo $_SESSION['msgsucesso'];
                     unset($_SESSION['msgsucesso']);
                 }
+                if($_SESSION['ativado']){
+                    echo $_SESSION['ativado'];
+                    unset($_SESSION['ativado']);
+                }
+                if($_SESSION['email']){
+                    echo $_SESSION['email'];
+                    unset($_SESSION['email']);
+                }
             ?>
         </p>
 </div>

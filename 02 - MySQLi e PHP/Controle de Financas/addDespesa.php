@@ -4,7 +4,7 @@ session_start();
 
 if($_SESSION['logado']){
   $userlogin = $_SESSION['usuario'];
-  $iduser = $_SESSION['id'];
+  $iduser = $_SESSION['iduser'];
 }else{
   $_SESSION['msglogado'] = "Fazer login para acessar o sistema.";
   header("Location: index.php");
@@ -83,7 +83,7 @@ if($_SESSION['logado']){
             $despesa = filter_input(INPUT_POST, "despesa", FILTER_SANITIZE_STRING);
 
             if($despesa){
-                $insertDespesa = mysqli_query($conn, "INSERT INTO cat_despesa (categoria) VALUES ('$despesa')");
+                $insertDespesa = mysqli_query($conn, "INSERT INTO cat_despesa (categoria, iduser) VALUES ('$despesa', '$iduser')");
 
                 if(mysqli_affected_rows($conn)){
                     $_SESSION['msg'] = "Despesa adicionada com sucesso à lista de descrição de despesas.";
@@ -95,7 +95,6 @@ if($_SESSION['logado']){
                 echo "É necessário preencher o campo antes de inserir.";
             
             }
-            
         ?>
     </div>
   
