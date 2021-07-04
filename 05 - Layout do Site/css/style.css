@@ -1,0 +1,30 @@
+nav ul li a {
+    color: white !important;
+}
+nav ul li a:hover {
+    color: lightblue !important;
+}
+header {
+    margin-bottom: 110px !important;
+}
+#dive {
+    width: 50%;
+    background-color: lightslategray;
+}
+#ulcontato {
+    width: 50%;
+    margin: auto;
+}
+#divul {
+    color: white;
+    width: 50%;
+    margin: auto;
+}
+#dive1carrossel {
+    width: 40%;
+    text-align: left;
+}
+#dive2carrossel {
+    width: 40%;
+    text-align: left;
+}
