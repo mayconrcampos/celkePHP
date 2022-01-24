@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import {Table, Titulo} from "./styles";
 
 export const Home = () => {
 
@@ -19,8 +19,8 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Listar</h1>
-      <table>
+      <Titulo>Listar</Titulo>
+      <Table>
         <thead>
           <tr>
             <th>ID</th>
@@ -39,7 +39,7 @@ export const Home = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }
