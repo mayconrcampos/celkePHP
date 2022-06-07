@@ -3,7 +3,7 @@
 // Credenciais do DB
 $servidor = "localhost";
 $usuario = "root";
-$senha = "5DaJ10.,Xw,8";
+$senha = "";
 $nomedb = "pessoas";
 
 // Criando conexão
